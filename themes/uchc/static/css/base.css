@@ -1,0 +1,210 @@
+html, body {
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;}
+	
+div, span, header, h1, h2, h3, main, nav, footer, a, p, table, ul, li, small, strong, img {
+	margin:0;
+	padding:0;}
+a, a:visited {color:#FFF;}
+a:hover {text-decoration:none;}
+.topbar, header h2, nav, p, ul {font-family:sans-serif;}
+
+body {
+	color:#FFF;
+	background:#000;
+	background-image:url("/static/img/IMG_0314.jpg");
+	background-attachment:fixed;
+	background-position:center;
+	background-size:cover;}
+
+.topbar {position:fixed;
+	z-index:1;
+	color:#FFF;
+	width:100%;
+	top:0;
+	background-color:#888;
+	background-color:rgba(0, 0, 0, 0.8);}
+.topbar div {height:100%;
+	text-align:center;}
+.topbar .login {text-align:left;
+	float:left;
+	height:100%;
+	width:30%;
+	margin-left:10px;}
+.topbar .login a {display:inline;}
+.topbar a, .topbar a:visited {color:#FFF;}
+.lang-form {
+	float:right;
+	height:100%;
+	width:30%;}
+.lang-form select, .lang-form .set-button {float:right;}
+
+.wrap {margin: 0 auto;}
+
+header {text-align:center;
+	background-color:#888;
+	background-color:rgba(3, 3, 3, .75);}
+header h1 {padding:5%;}
+header h2 {padding-bottom:5%;}
+header a {color:#DDD;
+	text-decoration:none;}
+
+nav {z-index:2;
+	width:100%;
+	float:left;}
+nav > div {width:33.3333333333333%;
+	float:left;}
+nav .tab {margin: 0 auto;
+	width:90%;
+	text-align:center;
+	padding-top:2%;
+	padding-bottom:2%;
+	background-color:#888;
+	background-color:rgba(0, 0, 0, 0.75);}
+nav .active {
+	background-color:#888;
+	background-color:rgba(0, 0, 0, 0.95);}
+nav a, nav a:visited {color:#FFF;}
+main {width:92%;
+	padding:4%;
+	float:left;
+	background-color:#888;
+	background-color:rgba(0, 0, 0, 0.95);}
+main h1, main h2, main h3 {padding-bottom:3%;}
+main p, main ul {padding-bottom:2%;}
+footer {color:#000;
+	float:left;
+	width:100%;
+	text-align:center;}
+footer a, footer a:visited {color:#000;}
+footer p {padding:5%;}
+
+@media (min-width:0px) { /* Watches */
+	/* No support for devices smaller than 250px 
+	 * (yet).  These values were just copied from 
+	 * the 'Small phones' query.   */
+}
+@media (min-width:250px) { /* Small phones */
+	.topbar {height:28px;
+		font-size:1.1em;}
+	.lang-form select, .lang-form .set-button {
+		margin-top:3px;
+		margin-right:1px;}
+	.wrap {width:96%;}
+	header, main {border-radius: 5px;}
+	header {margin:auto;
+		margin-top:12%;
+		margin-bottom:2%;}
+	header h1 {font-size:2em;}
+	header h2 {font-size:1em;}
+	nav {font-size:1em;}
+	nav .tab {border-top-left-radius: 5px;
+		border-top-right-radius: 5px;}
+	main h1 {font-size:1.3em;}
+	main h2 {font-size:1.2em;}
+	main h3 {font-size:1.1em;}
+	main p, main ul {font-size:.9em;}
+	footer p {font-size:.8em;}
+}
+@media (min-width:350px) { /* Large phones */
+	.topbar {height:33px;
+		font-size:1.4em;}
+	.lang-form select, .lang-form .set-button {
+		margin-top:5px;
+		margin-right:3px;}
+	.wrap {width:93%;}
+	header, main {border-radius: 6px;}
+	header {margin:auto;
+		margin-top:14%;
+		margin-bottom:6%;}
+	header h1 {font-size:4em;}
+	header h2 {font-size:1.2em;}
+	nav {font-size:1.2em;}
+	nav .tab {border-top-left-radius: 6px;
+		border-top-right-radius: 6px;}
+	main h1 {font-size:1.5em;}
+	main h2 {font-size:1.3em;}
+	main h3 {font-size:1.2em;}
+	main p, main ul {font-size:1em;}
+	footer p {font-size:.9em;}
+}
+@media (min-width:500px) { /* Small tablets */
+	.topbar {height:35px;
+		font-size:1.5em;}
+	.lang-form select, .lang-form .set-button {
+		margin-top:6px;
+		margin-right:4px;}
+	.wrap {width:92%;}
+	header, main {border-radius: 7px;}
+	header {margin:auto;
+		margin-top:12%;
+		margin-bottom:6%;}
+	header h1 {font-size:5em;}
+	header h2 {font-size:1.5em;}
+	nav {font-size:1.3em;}
+	nav .tab {border-top-left-radius: 7px;
+		border-top-right-radius: 7px;}
+	main h1 {font-size:1.8em;}
+	main h2 {font-size:1.5em;}
+	main h3 {font-size:1.3em;}
+	main p, main ul {font-size:1.1em;}
+	footer p {font-size:1em;}
+}
+@media (min-width:800px) { /* Large tablets */
+	.topbar {height:38px;
+		font-size:1.6em;}
+	.lang-form select, .lang-form .set-button {
+		margin-top:7px;
+		margin-right:5px;}
+	.wrap {width:91%;}
+	header, main {border-radius: 8px;}
+	header {margin:auto;
+		margin-top:10%;
+		margin-bottom:6%;}
+	header h1 {font-size:6em;}
+	header h2 {font-size:1.8em;}
+	nav {font-size:1.5em;}
+	nav .tab {border-top-left-radius: 8px;
+		border-top-right-radius: 8px;}
+	main h1 {font-size:2.6em;}
+	main h2 {font-size:2.2em;}
+	main h3 {font-size:1.5em;}
+	main p, main ul {font-size:1.3em;}
+	footer p {font-size:1.2em;}
+}
+@media (min-width:1200px) { /* Small computers */
+	.topbar {height:40px;
+		font-size:1.7em;}
+	.lang-form select, .lang-form .set-button {
+		margin-top:8px;
+		margin-right:5px;}
+	.wrap {width:90%;}
+	header {border-radius: 10px;}
+	header {margin:auto;
+		margin-top:9%;
+		margin-bottom:6%;}
+	header h1 {font-size:7em;}
+	header h2 {font-size:2em;}
+	nav {font-size:1.7em;}
+	nav .tab {border-top-left-radius: 10px;
+		border-top-right-radius: 10px;}
+	main {border-radius: 10px;}
+	main h1 {font-size:3em;}
+	main h2 {font-size:2.5em;}
+	main h3 {font-size:2em;}
+	main p, main ul {font-size:1.4em;}
+	footer p {font-size:1.3em;}
+}
+@media (min-width:1500px) { /* Large computers */
+	/* No support for large screens, like
+	 * desktop computers (yet).  The values
+	 * from the 'Small computers query will
+	 * be used.  */
+}
+@media (min-width:1900px) { /* Big screens */
+	/* No support for huge screens, like TVs 
+	 * (yet).  The values from the 'Large
+	 * computers' query will be used.  */
+}

@@ -1,0 +1,30 @@
+{% load mezzanine_tags i18n staticfiles %}
+<!-- Begin Recent Work + Clients -->
+<section class="pt40 mb40 border-top">
+	<div class="container">		
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="heading mb30">
+					<h4><span class="ion-android-social-user mr15"></span>{{ page.title }}</h4>
+	                <div class="owl-controls">
+	                    <div id="customNav" class="owl-nav"></div>
+	                </div>
+				</div>
+				<div id="owl-carousel-thumb" class="owl-carousel">
+					{% for p in page.published_children %}
+					<div class="thumbnail">
+		                <div class="caption v-wrap">
+		                	<div class="thumbnail-caption-holder v-box">
+			                    <h4 class="text-white">{{ p.title }}</h4>
+			                    <a href="{{ p.get_absolute_url }}" class="btn btn-rw btn-clear"><span class="ion-android-search"></span> Göster</a>
+		                    </div>
+		                </div>
+		                <img src="{{ MEDIA_URL }}{% thumbnail p.image 350 190 %}" alt="...">
+		            </div>
+		            {% endfor %}
+				</div>
+			</div>
+		</div>
+	</div><!-- /container -->
+</section><!-- /section -->
+<!-- End Recent Work + Clients -->

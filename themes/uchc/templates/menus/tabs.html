@@ -1,0 +1,15 @@
+{% load pages_tags i18n %}
+
+{% for page in page_branch %}
+	{% if page.in_menu %}
+		<div id="nav-{{ page.html_id }}" class="{{ page.title }}">
+			<div class="tab {% if page.is_current %}active{% endif %}">
+				{% if page.is_current %}
+					{% trans page.title %}
+				{% else %}
+					<a href="{{ page.get_absolute_url }}">{% trans page.title %}</a>
+				{% endif %}
+			</div>
+		</div>
+	{% endif %}
+{% endfor %}

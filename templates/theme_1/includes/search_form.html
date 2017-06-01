@@ -1,0 +1,20 @@
+{% load mezzanine_tags i18n %}
+<ul class="nav navbar-nav navbar-right">
+<li class="dropdown">
+	<a href="#" class="dropdown-toggle dropdown-form-toggle" data-toggle="dropdown"><i class="fa fa-search"></i></a>
+	<ul class="dropdown-menu dropdown-menu-user">
+	   <li id="dropdownForm">
+	   	<div class="dropdown-form">
+	       	<form action="{% url "search" %}" class="form-default form-inline p15" role="search">
+	               <div class="input-group">
+	                   <input type="text" class="form-control search-input" placeholder="{% trans "Search" %}" name="q" value="{{ request.REQUEST.q }}">
+	                   <span class="input-group-btn">
+	                       <input type="submit" class="btn btn-rw btn-primary search-btn" value="{% trans "Go!" %}">
+	                   </span>
+	               </div><!-- /input group -->  
+	           </form><!-- /searh form -->  
+	       </div><!-- /dropdown form -->  
+	   </li><!-- /dropdownForm list item -->  
+	</ul><!-- /search dropdown -->
+</li>
+</ul>

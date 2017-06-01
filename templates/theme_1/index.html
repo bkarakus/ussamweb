@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block meta_title %}{% trans "Home" %}{% endblock %}
+{% block title %}{% trans "Home" %}{% endblock %}
+
+{% block breadcrumb_menu %}
+{% endblock %}
+
+{% block carousel %}
+{% include 'includes/carousel.html' %}
+{% endblock %}
+
+{% block main-content %}
+<div class="row no-gutter">
+{% for i in "123456789" %}
+	<div class="col-md-4">
+    <img src="http://lorempixel.com/400/300/{% cycle 'business' 'nature' 'people' %}" class="img-responsive"/>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

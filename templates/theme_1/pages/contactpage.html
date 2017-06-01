@@ -1,0 +1,47 @@
+{% extends "pages/page.html" %}
+
+{% load mezzanine_tags %}
+
+{% block main %}{{ block.super }}
+
+<div class="row">
+	<div class="col-xs-12 no-padding" style="margin-bottom: -7px; margin-top:-15px;">
+		{{ page.contactpage.google_map_emded|safe }}
+	</div>
+</div>
+
+<div class="row" style="margin-top:15px">
+	<div class="col-sm-8">
+		<div class="heading mb20"><h4><span class="ion-android-mail mr15"></span>{{ page.title }}</h4></div>
+		<p class="mb20"><b>Hizmetlerimiz hakkında detaylı bilgi için.</b></p>
+		<form role="form">
+                  <div class="form-group">
+                      <input type="email" placeholder="Name" class="form-control" id="InputName">
+                  </div>
+                  <div class="form-group">
+                      <input type="email" placeholder="Email Address" class="form-control" id="InputEmail1">
+                  </div>
+                  <div class="form-group">
+                      <textarea class="form-control" placeholder="Message" id="InputMessage" rows="7"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-rw btn-primary">Submit</button>
+              </form>
+	</div>
+	<div class="col-sm-4 mt30-xs">
+		<div class="panel panel-primary no-margin">
+		    <div class="panel-heading">
+		        <h3 class="panel-title"><span class="ion-android-system-home"></span> Adres</h3>
+		    </div>
+		    <div class="panel-body">
+		        <address class="no-margin">
+                          <strong>{{ page.contactpage.adres_baslik }}</strong><br>
+                          {{ page.contactpage.adres_1 }}<br>
+                          {{ page.contactpage.adres_2 }}<br>
+                          <abbr title="Telefon">T:</abbr> {{ page.contactpage.tel }} <br>
+                          Mail: <a href="#">{{ page.contactpage.email }}</a>
+                      </address>
+		    </div>
+		</div>
+	</div>
+</div>
+{% endblock %}

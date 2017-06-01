@@ -1,0 +1,57 @@
+{% load mezzanine_tags i18n staticfiles %}
+
+{% with images=page.gallery.images.all %}
+
+<!-- Begin Carousel + Intro -->
+<div class="pt40 pb40 border-top">
+	<div class="container">
+		<!-- Begin Carousel + Content -->
+		<div class="row">
+		
+			<!-- Begin Carousel -->
+			<div class="col-sm-4" data-sr="enter left">
+				<div id="slider-{{ page.pk }}" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+					{% comment %}
+					<ol class="carousel-indicators carousel-indicators-caption">
+						{% for image in images %}
+						<li data-target="#slider-{{ page.pk }}" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}"></li>
+						{% endfor %}
+					</ol>
+					{% endcomment %}
+
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner">
+						{% for image in images %}
+						<div class="item {% if forloop.first %}active{% endif %}">
+							<img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail image.file 400 300 %}" alt="{{ image.description }}">
+						</div>
+						{% endfor %}
+					</div>
+
+					<!-- Controls -->
+					<a class="left carousel-control" href="#slider-{{ page.pk }}" role="button" data-slide="prev">
+						<span class="ion-chevron-left carousel-arrow-left" aria-hidden="true"></span>
+					</a>
+					<a class="right carousel-control" href="#slider-{{ page.pk }}" role="button" data-slide="next">
+						<span class="ion-chevron-right carousel-arrow-right" aria-hidden="true"></span>
+					</a>
+				</div>
+			</div><!-- /column -->
+			<!-- End Carousel -->
+
+			<!-- Content Inside -->
+			<div class="col-sm-8">
+				<div class="heading mb20 mt30-xs"><h4><span class="ion-beaker mr15"></span>{{ page.title }}</h4></div>
+				{{ page.content|richtext_filters|safe }}
+			</div><!-- /column -->
+			<!-- End Content Inside -->
+
+		</div><!-- /row -->
+		<!-- End Carousel + Content -->
+
+	</div><!-- /container -->
+</div><!-- /content -->
+<!-- End Carousel + Intro -->
+
+{% endwith %}

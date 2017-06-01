@@ -1,0 +1,32 @@
+{% extends "pages/gallery.html" %}
+{% load i18n mezzanine_tags staticfiles custom_tags %}
+
+{% block meta_title %}{% trans "Home" %}{% endblock %}
+{% block title %}{% trans "Home" %}{% endblock %}
+
+{% block breadcrumb_menu %}
+{% endblock %}
+
+{% block carousel %}
+{% include 'includes/carousel.html' %}
+{% endblock %}
+
+{% block main-content %}
+<div class="home-page-gallery gallery row no-gutter">
+{% with images=page.gallery.images.all %}
+{% for image in images %}
+<div class="col-xs-6 col-sm-4">
+    <a class="thumbnail" rel="#image-{{ image.id }}" title="{{ image.description }}" href="{{ image.file.url }}">
+        <img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail image.file 300 200 %}">
+    </a>
+</div>
+{% endfor %}
+{% endwith %}
+</div>
+{% endblock %}
+
+{% block homepage %}
+{% render_page parke includes/homepage_1.html %}
+{% render_page magazamiz includes/homepage_2.html %}
+{% render_page dunya-markalari includes/homepage_3.html %}
+{% endblock %}

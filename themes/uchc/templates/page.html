@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n mezzanine_tags keyword_tags %}
+
+{% block meta_title %}
+	{{ page.meta_title }}
+{% endblock meta_title %}
+
+{% block meta_keywords %}{% metablock %}
+{% keywords_for page as keywords %}
+{% for keyword in keywords %}
+    {% if not forloop.first %}, {% endif %}
+    {{ keyword }}
+{% endfor %}
+{% endmetablock %}{% endblock meta_keywords %}
+
+{% block meta_description %}{% metablock %}
+	{{ page.description }}
+{% endmetablock %}{% endblock meta_description %}
+
+{% block extra_css %}{% if page.extra_css %}<style>{{ page.extra_css }}</style>{% endif %}{% endblock %}
+{% block extra_js %}{% if page.extra_js %}<script>{{ page.extra_js }}</script>{% endif %}{% endblock %}
+
+{% block title %}
+{% editable page.title %}
+	{{ page.title }}
+{% endeditable %}
+{% endblock title %}
+
+{% block main %}
+{% endblock main %}

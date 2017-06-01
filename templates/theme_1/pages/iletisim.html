@@ -1,0 +1,54 @@
+{% extends "pages/form.html" %}
+
+{% load mezzanine_tags i18n custom_tags bootstrap %}
+
+{% block main %}
+
+<div class="row">
+	<div class="col-xs-12 no-padding" style="margin-bottom: -7px; margin-top:-15px;">
+		{{ settings.SITE_GOOGLE_MAP|safe }}
+	</div>
+</div>
+
+<div class="row" style="margin-top:15px">
+	<div class="col-sm-8">
+		<div class="heading mb20"><h4><span class="ion-android-mail mr15"></span>{{ page.title }}</h4></div>
+		<p class="mb20">{{ page.content }}</p>
+		{% if request.GET.sent %}
+    {% editable page.form.response %}
+    {{ page.form.response|richtext_filters|safe }}
+    {% endeditable %}
+{% else %}
+    {% with page.form as page_form %}
+    {% editable page_form.content %}
+    {{ page_form.content|richtext_filters|safe }}
+    {% endeditable %}
+    {% endwith %}
+
+    <form class="mezzanine-form" method="post"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
+        {% csrf_token %}
+        {{ form|bootstrap }}
+        <div class="form-actions">
+            <input class="btn btn-primary btn-lg" type="submit"
+                value="{% if page.form.button_text %}{{ page.form.button_text }}{% else %}{% trans "Submit" %}{% endif %}">
+        </div>
+    </form>
+{% endif %}
+	</div>
+	<div class="col-sm-4 mt30-xs">
+		<div class="panel panel-primary no-margin">
+		    <div class="panel-heading">
+		        <h3 class="panel-title"><span class="ion-ios-home"></span> Adres</h3>
+		    </div>
+		    <div class="panel-body">
+		        <address class="no-margin">
+                          <strong>{{ settings.SITE_TITLE }}</strong><br />
+                          {{ settings.SITE_ADDRESS|address|safe }}<br />
+                          <abbr title="Telefon">T:</abbr> {{ settings.SITE_PHONE }} <br>
+                          Mail: <a href="#">{{ settings.SITE_EMAIL }}</a>
+                      </address>
+		    </div>
+		</div>
+	</div>
+</div>
+{% endblock %}

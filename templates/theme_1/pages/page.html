@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load mezzanine_tags keyword_tags custom_tags %}
+
+{% block meta_title %}{{ page.meta_title }}{% endblock %}
+
+{% block meta_keywords %}{% metablock %}
+{% keywords_for page as keywords %}
+{% for keyword in keywords %}
+    {% if not forloop.first %}, {% endif %}
+    {{ keyword }}
+{% endfor %}
+{% endmetablock %}{% endblock %}
+
+{% block meta_description %}{% metablock %}
+{{ page.description }}
+{% endmetablock %}{% endblock %}
+
+{% block title %}
+{% editable page.title %}{{ page.title }}{% endeditable %}
+{% endblock %}
+
+{% block main %}
+
+{% endblock %}
+{% block subpages %}
+{% get_page_children as page_children %}
+<ul>
+{% for child in page_children %}
+	<li><a href="{{ child.get_absolute_url }}">{{ child.title }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

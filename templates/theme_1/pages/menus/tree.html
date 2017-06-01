@@ -1,0 +1,126 @@
+{% load i18n pages_tags %}
+{% spaceless %}
+
+{% if page_branch_in_menu %}
+
+{% if branch_level == 0 %}
+<ul class="metismenu" id="side-menu">
+    {% for page in page_branch %}
+    {% if not has_home and page.is_primary and forloop.first %}
+    <li{% if on_home %} class="active"{% endif %} id="dropdown-menu-home">
+        <a href="{% url "home" %}">{% trans "Home" %}</a>
+    </li>
+    {% endif %}
+    {% if page.in_menu %}
+    <li class="{% if page.is_current_or_ascendant %}active {% endif %}{% if page.is_current %}current{% endif %}"
+        id="{{ page.html_id }}">
+        <a href="{{ page.get_absolute_url }}" {% if page.has_children_in_menu %}{% endif %}>
+            <span class="sidebar-nav-item">{{ page.title }}</span>
+            {% if page.has_children_in_menu %}<span class="fa arrow"></span>{% endif %}
+        </a>
+        {% if page.has_children_in_menu %}{% page_menu page %}{% endif %}
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+
+{% else %}
+<ul aria-expanded="false">
+    {% for page in page_branch %}
+    {% if page.in_menu %}
+    <li class="{% if page.is_current_or_ascendant %}active {% endif %}{% if page.is_current %}current{% endif %}" id="{{ page.html_id }}">
+        <a href="{{ page.get_absolute_url }}">
+        	<span class="sidebar-nav-item">{{ page.title }}</span>
+            {% if page.has_children_in_menu %}<span class="fa arrow"></span>{% endif %}
+        </a>
+        {% if page.has_children_in_menu %}{% page_menu page %}{% endif %}
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% endif %}
+{% endspaceless %}
+
+<!-- 
+<ul class="metismenu" id="side-menu">
+          <li class="">
+            <a href="#" aria-expanded="true">
+              <span class="sidebar-nav-item-icon fa fa-github fa-lg"></span>
+              <span class="sidebar-nav-item">metisMenu</span>
+              <span class="fa arrow"></span>
+            </a>
+            <ul aria-expanded="false" class="collapse" style="height: 0px;">
+              <li>
+                <a href="https://github.com/onokumus/metisMenu">
+                  <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                  Fork
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/onokumus/metisMenu">
+                  <span class="sidebar-nav-item-icon fa fa-star"></span>
+                  Star
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/onokumus/metisMenu/issues">
+                  <span class="sidebar-nav-item-icon fa 
+fa-exclamation-triangle"></span>
+                  Issues
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" aria-expanded="false">Menu 0 <span class="fa 
+arrow"></span></a>
+            <ul aria-expanded="false" class="collapse">
+              <li><a href="#">item 0.1</a></li>
+              <li><a href="#">item 0.2</a></li>
+              <li><a href="http://onokumus.com">onokumus</a></li>
+              <li><a href="#">item 0.4</a></li>
+            </ul>
+          </li>
+          <li class="active">
+            <a href="#" aria-expanded="true">Menu 1 <span class="glyphicon 
+arrow"></span></a>
+            <ul aria-expanded="true" class="collapse in">
+              <li><a href="#">item 1.1</a></li>
+              <li><a href="#">item 1.2</a></li>
+              <li class="">
+                <a href="#" aria-expanded="false">Menu 1.3 <span class="fa 
+plus-times"></span></a>
+                <ul aria-expanded="false" class="collapse" style="height: 0px;">
+                  <li><a href="#">item 1.3.1</a></li>
+                  <li><a href="#">item 1.3.2</a></li>
+                  <li><a href="#">item 1.3.3</a></li>
+                  <li><a href="#">item 1.3.4</a></li>
+                </ul>
+              </li>
+              <li><a href="#">item 1.4</a></li>
+              <li class="">
+                <a href="#" aria-expanded="false">Menu 1.5 <span class="fa 
+plus-minus"></span></a>
+                <ul aria-expanded="false" class="collapse" style="height: 0px;">
+                  <li><a href="#">item 1.5.1</a></li>
+                  <li><a href="#">item 1.5.2</a></li>
+                  <li><a href="#">item 1.5.3</a></li>
+                  <li><a href="#">item 1.5.4</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" aria-expanded="false">Menu 2 <span class="glyphicon 
+arrow"></span></a>
+            <ul aria-expanded="false" class="collapse">
+              <li><a href="#">item 2.1</a></li>
+              <li><a href="#">item 2.2</a></li>
+              <li><a href="#">item 2.3</a></li>
+              <li><a href="#">item 2.4</a></li>
+            </ul>
+          </li>
+        </ul>
+         -->

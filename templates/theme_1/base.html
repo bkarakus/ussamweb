@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
+{% load pages_tags mezzanine_tags i18n staticfiles %}
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+	<meta name="description" content="{% block meta_description %}{% endblock %}">
+	<title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+	<link rel="shortcut icon" href="{% static "theme_1/images/favicon.ico" %}">
+	
+	<!-- Royal Preloader CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'theme_1/css/royal_preloader.css' %}">
+
+	<!-- jQuery Files -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<!-- Royal Preloader -->
+	<script type="text/javascript" src="{% static 'theme_1/js/royal_preloader.min.js' %}"></script>
+	<script type="text/javascript">
+		Royal_Preloader.config({
+		    mode:       	'number',
+		    showProgress: 	false,
+		    background: 	'#ffffff'
+		});
+	</script>
+
+	<!-- Stylesheets -->
+	{% compress css %}
+	<link href="{% static 'theme_1/css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'theme_1/css/style.css' %}" rel="stylesheet" title="main-css">
+	<link href="{% static 'theme_1/css/bootstrap-social.css' %}" rel="stylesheet">
+	<link href="{% static 'theme_1/css/animate.min.css' %}" rel="stylesheet">
+	<link href="{% static 'theme_1/css/owl.carousel.css' %}" rel="stylesheet" >
+	<link href="{% static 'theme_1/css/metisMenu.css' %}" rel="stylesheet" >
+	<link href="{% static 'theme_1/css/jquery.snippet.css' %}" rel="stylesheet">
+	<link href="{% static 'theme_1/css/buttons.css' %}" rel="stylesheet">
+	<link href="{% static 'theme_1/css/style-switcher.css' %}" rel="stylesheet">
+	<link href="{% static 'theme_1/css/width-boxed.css' %}" rel="stylesheet">
+	<link href="{% static 'theme_1/css/colors/purple.css' %}" rel="stylesheet">
+	
+	<!-- Alternate Stylesheets // choose what you want and remove rest for production -->
+	<link rel="alternate stylesheet" type="text/css" href="{% static 'theme_1/css/colors/blue.css' %}" title="blue">
+	<link rel="alternate stylesheet" type="text/css" href="{% static 'theme_1/css/colors/green.css' %}" title="green">
+	<link rel="alternate stylesheet" type="text/css" href="{% static 'theme_1/css/colors/purple.css' %}" title="purple">
+	<link rel="alternate stylesheet" type="text/css" href="{% static 'theme_1/css/colors/dark-blue.css' %}" title="dark-blue">
+	<link rel="alternate stylesheet" type="text/css" href="{% static 'theme_1/css/colors/red.css' %}" title="red">
+	<link rel="alternate stylesheet" type="text/css" href="{% static 'theme_1/css/colors/silver.css' %}" title="silver">
+	<link rel="alternate stylesheet" type="text/css" href="{% static 'theme_1/css/colors/pinkish.css' %}" title="pinkish">
+	<link rel="alternate stylesheet" type="text/css" href="{% static 'theme_1/css/colors/seagul.css' %}" title="seagul">
+	<link rel="alternate stylesheet" type="text/css" href="{% static 'theme_1/css/width-full.css' %}" title="width-full">
+	
+
+	<!-- Icon Fonts -->
+	<link href="{% static 'theme_1/css/ionicons.min.css' %}" rel='stylesheet' type='text/css'>
+	<link href="{% static 'theme_1/css/font-awesome.css' %}" rel='stylesheet' type='text/css'>
+
+	<!-- Magnific Popup -->
+	<link href="{% static 'theme_1/css/magnific-popup.css' %}" rel='stylesheet' type='text/css'>
+	{% block extra_css %}{% endblock %}
+	{% endcompress %}
+	{% block extra_head %}{% endblock %}
+</head>
+<body class="royal_preloader scrollreveal">
+
+	<div id="royal_preloader"></div>
+	<!-- Begin Boxed or Fullwidth Layout -->
+	<header>
+		     	<!-- Begin Navigation -->
+				<div class="navbar navbar-fixed-top">
+					<div class="container container-header">
+						<div class="navbar-header">
+							<!-- Brand -->
+							<a href="/" class="navbar-brand">
+								 <img src="{% static 'theme_1/images/logo.png' %}" class="raleway-logo" alt="Raleway Responsive Parallax Bootstrap 3 Template">
+							</a>
+							<!-- Mobile Navigation -->
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+					            <span class="sr-only">Toggle navigation</span>
+					            <span class="icon-bar"></span>
+					            <span class="icon-bar"></span>
+					            <span class="icon-bar"></span>
+							</button>
+						</div><!-- /navbar header -->   
+
+						<!-- Main Navigation -->
+						<nav class="navbar-collapse collapse navHeaderCollapse" role="navigation">
+							{% page_menu "pages/menus/dropdown.html" %}
+							{% include "includes/language_selector.html" %}
+							{% search_form "all" %}
+						</nav><!-- /nav -->  
+
+					</div><!-- /container header -->   
+				</div><!-- /navbar -->   
+				<!-- End Navigation -->
+
+			</header><!-- /header -->
+	
+
+			<!-- Begin Header -->
+			
+			<!-- End Header -->
+			<div class="container mb30">
+			{% block carousel %}{% endblock %}
+			</div>
+
+			<!-- Begin Carousel -->
+			<div class="container">
+			<div class="row">				
+				<div class="col-md-12">
+					{% block breadcrumb_menu %}
+					<div class="header">
+						<div class="row">
+							<!-- Page Title -->
+							<div class="col-sm-6 col-xs-12">
+								<h1>{% block title %}{% endblock %}</h1>
+							</div>
+
+							<!-- Breadcrumbs -->
+							<div class="col-sm-6">
+								<ul class="breadcrumb">
+									{% spaceless %}
+									{% page_menu "pages/menus/breadcrumb.html" %}
+									{% endspaceless %}
+								</ul>
+							</div><!-- /column --> 
+						</div><!-- /row --> 
+					</div><!-- /page header --> 
+					{% endblock %}
+					{% block main-content %}
+					<div class="main-content">
+				    {% block main %}{% endblock %}
+				    {% block subpages %}Alt Sayfalar{% endblock %}
+				    </div>
+				    {% endblock %}
+				</div>
+			</div>
+			</div>
+			{% block homepage %}
+			{% endblock %}
+			<!-- Begin Footer -->
+			<footer class="footer">
+				<div class="container">
+					<div class="row">
+						<!-- Contact -->
+						<div class="col-sm-3 mg25-xs">
+							<div class="heading-footer"><h4>İletişim</h4></div>
+							<p><span class="ion-home footer-info-icons"></span><small class="address">{{ settings.SITE_ADDRESS|safe }}</small></p>
+							<p><span class="ion-email footer-info-icons"></span><small class="address"><a href="mailto:{{ settings.SITE_EMAIL }}">{{ settings.SITE_EMAIL }}</a></small></p>
+							<p><span class="ion-ios-telephone footer-info-icons"></span><small class="address">{{ settings.SITE_PHONE }}</small></p>
+						</div>
+						
+						<!-- About -->
+						<div class="col-sm-9">
+							{{ settings.SITE_GOOGLE_MAP|safe }}
+						</div>
+					</div><!-- /row -->
+
+					<!-- Copyright -->
+					<div class="row">
+						<hr class="dark-hr">
+						<div class="col-sm-11 col-xs-10">
+						</div>
+						<div class="col-sm-1 col-xs-2 text-right">
+							<a href="#" class="scroll-top"><div class="footer-scrolltop-holder"><span class="ion-chevron-up footer-scrolltop"></span></div></a>
+						</div>
+					</div><!-- /row -->
+				</div><!-- /container -->
+			</footer><!-- /footer -->
+			<!-- End Footer --> 
+
+		
+	<!-- End Boxed or Fullwidth Layout -->
+	
+	<!-- Javascript Files -->
+	{% compress js %}
+	<script type="text/javascript" src="{% static 'theme_1/js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'theme_1/js/hover-dropdown.js' %}"></script>
+	<script type="text/javascript" src="{% static 'theme_1/js/jquery.easing.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'theme_1/js/jquery.mixitup.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'theme_1/js/scrollReveal.js' %}"></script>
+	<script type="text/javascript" src="{% static 'theme_1/js/owl.carousel.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'theme_1/js/metisMenu.js' %}"></script>
+	<script type="text/javascript" src="{% static 'theme_1/js/jquery.magnific-popup.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'theme_1/js/jquery.snippet.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'theme_1/js/jquery.fitvids.js' %}"></script>
+	<script type="text/javascript" src="{% static 'theme_1/js/style-switcher.js' %}"></script>
+	<script type="text/javascript" src="{% static 'theme_1/js/activate-snippet.js' %}"></script>
+	<script type="text/javascript" src="{% static 'theme_1/js/skrollr.min.js' %}"></script>
+    <script>
+		var config = {
+		easing: 'hustle',
+		mobile:  true,
+		delay:  'onload'
+		}
+		window.sr = new scrollReveal( config );
+    </script>
+	<script type="text/javascript" src="{% static 'theme_1/js/main.js' %}"></script>
+	{% block extra_js %}{% endblock %}
+	{% endcompress %}
+</body>
+</html>
