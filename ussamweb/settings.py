@@ -89,7 +89,7 @@ EXTRA_MODEL_FIELDS = (
 
 # If True, the django-modeltranslation will be added to the
 # INSTALLED_APPS setting.
-USE_MODELTRANSLATION = False
+USE_MODELTRANSLATION = True
 
 
 ########################
@@ -217,8 +217,6 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            os.path.join(PROJECT_ROOT, "templates", "theme_1"),
-            os.path.join(PROJECT_ROOT, "templates", "default"),
         ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -250,7 +248,7 @@ if DJANGO_VERSION < (1, 9):
 ################
 
 INSTALLED_APPS = (
-    #"themes.ceda",
+    "themes.default",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -264,17 +262,17 @@ INSTALLED_APPS = (
     "mezzanine.core",
     "mezzanine.generic",
     "mezzanine.pages",
-    "mezzanine.blog",
+    #"mezzanine.blog",
     "mezzanine.forms",
     "mezzanine.galleries",
     "mezzanine.twitter",
     "polymorphic",
-    "announcements",
+    "flatpages",
     "slides",
     "pageimages",
     #"rosetta",
     "mezzanine.accounts",
-    "portlets",
+    #"portlets",
     # "mezzanine.mobile",
 )
 
@@ -320,6 +318,13 @@ OPTIONAL_APPS = (
     "compressor",
     PACKAGE_NAME_FILEBROWSER,
     PACKAGE_NAME_GRAPPELLI,
+)
+
+ADMIN_MENU_ORDER = (
+    (_("Content"), ("pages.Page", "flatpages.FlatPage", "blog.BlogPost",
+       "generic.ThreadedComment", (_("Media Library"), "media-library"),)),
+    (_("Site"), ("sites.Site", "redirects.Redirect", "conf.Setting")),
+    (_("Users"), ("auth.User", "auth.Group",)),
 )
 
 ##################

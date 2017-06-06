@@ -1,0 +1,124 @@
+{% extends "base.html" %} 
+{% load i18n %} 
+{% block meta_title %}{% trans "Home" %}{% endblock %} 
+{% block title %}{% trans "Home" %}{% endblock%} 
+{% block breadcrumb_menu %}
+<li class="active">{% trans "Home" %}</li>
+{% endblock %} 
+{% block body_class %}home-page{% endblock %} 
+{% block page-header %}{% endblock %}
+{% block main %}
+<!-- Swiper -->
+<div class="row">
+	<div class="col-md-12">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				{% for i in "123456789" %}
+				<div class="swiper-slide">
+					<img
+						src="http://lorempixel.com/700/250/{% cycle 'business' 'nature' 'people' %}"
+						class="img-responsive" />
+				</div>
+				{% endfor %}
+			</div>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
+			<!-- Add Arrows -->
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+		</div>
+	</div>
+<div class="col-md-6 ">
+		<section class="news">
+			<h1 class="section-heading text-highlight">
+				<span class="line">Latest News</span>
+			</h1>
+			<div class="carousel-controls">
+				<a class="prev" href="#news-carousel-2" data-slide="prev"><i
+					class="fa fa-caret-left"></i></a> <a class="next" href="#news-carousel-2"
+					data-slide="next"><i class="fa fa-caret-right"></i></a>
+			</div>
+			<!--//carousel-controls-->
+			<div class="section-content clearfix">
+				<div id="news-carousel-2" class="news-carousel carousel slide">
+					<div class="carousel-inner">
+						<div class="item active">
+							<div class="col-md-6 news-item">
+								<img src="http://lorempixel.com/200/290/{% cycle 'business' 'nature' 'people' %}">
+							</div>
+							<!--//news-item-->
+							<div class="col-md-6 news-item">
+								<img src="http://lorempixel.com/200/290/{% cycle 'business' 'nature' 'people' %}">
+							</div>
+							<!--//news-item-->
+						</div>
+						<!--//item-->
+						<div class="item">
+							<div class="col-md-6 news-item">
+								<img src="http://lorempixel.com/200/290/{% cycle 'business' 'nature' 'people' %}">
+							</div>
+							<!--//news-item-->
+							<div class="col-md-6 news-item">
+								<img src="http://lorempixel.com/200/290/{% cycle 'business' 'nature' 'people' %}">
+							</div>
+							<!--//news-item-->
+						</div>
+						<!--//news-item-->
+					</div>
+					<!--//item-->
+				</div>
+				<!--//carousel-inner-->
+			</div>
+			<!--//news-carousel-->
+			<!--//section-content-->
+		</section>
+	</div>
+	<!--//news-->
+	<div class="col-md-6 ">
+		<section class="news">
+			<h1 class="section-heading text-highlight">
+				<span class="line">Latest News</span>
+			</h1>
+			<div class="carousel-controls">
+				<a class="prev" href="#news-carousel" data-slide="prev"><i
+					class="fa fa-caret-left"></i></a> <a class="next" href="#news-carousel"
+					data-slide="next"><i class="fa fa-caret-right"></i></a>
+			</div>
+			<!--//carousel-controls-->
+			<div class="section-content clearfix">
+				<div id="news-carousel" class="news-carousel carousel slide">
+					<div class="carousel-inner">
+						<div class="item active">
+							<div class="col-md-6 news-item">
+								<img src="http://lorempixel.com/200/290/{% cycle 'business' 'nature' 'people' %}">
+							</div>
+							<!--//news-item-->
+							<div class="col-md-6 news-item">
+								<img src="http://lorempixel.com/200/290/{% cycle 'business' 'nature' 'people' %}">
+							</div>
+							<!--//news-item-->
+						</div>
+						<!--//item-->
+						<div class="item">
+							<div class="col-md-6 news-item">
+								<img src="http://lorempixel.com/200/290/{% cycle 'business' 'nature' 'people' %}">
+							</div>
+							<!--//news-item-->
+							<div class="col-md-6 news-item">
+								<img src="http://lorempixel.com/200/290/{% cycle 'business' 'nature' 'people' %}">
+							</div>
+							<!--//news-item-->
+						</div>
+						<!--//news-item-->
+					</div>
+					<!--//item-->
+				</div>
+				<!--//carousel-inner-->
+			</div>
+			<!--//news-carousel-->
+			<!--//section-content-->
+		</section>
+	</div>
+	<!--//news-->
+</div>
+{% endblock %}

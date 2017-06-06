@@ -11,3 +11,5 @@ future >= 0.9.0
 pillow
 chardet
 #rosetta
+mysql-python
+django-polymorphic
