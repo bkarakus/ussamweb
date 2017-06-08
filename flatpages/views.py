@@ -41,11 +41,11 @@ def flatpage_list(request, tag=None, username=None,
     author = None
     if username is not None:
         author = get_object_or_404(User, username=username)
-        flatpages_qs = flatpages_qs.filter(user=author)
+        flatpages_qs = flatpages_qs.filter(authors=author)
         templates.append(u"flatpages_qs/flatpage_list_%s.html" % username)
 
-    prefetch = ("categories", "keywords__keyword")
-    flatpages_qs = flatpages_qs.select_related("user").prefetch_related(*prefetch)
+    prefetch = ("categories", "authors", "keywords__keyword")
+    flatpages_qs = flatpages_qs.prefetch_related(*prefetch)
     flatpages_qs = paginate(flatpages_qs, request.GET.get("page", 1),
                           settings.FLATPAGE_PER_PAGE,
                           settings.MAX_PAGING_LINKS)

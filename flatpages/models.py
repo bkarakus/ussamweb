@@ -10,8 +10,10 @@ from mezzanine.conf import settings
 from mezzanine.core.fields import FileField
 from mezzanine.core.models import Displayable, Ownable, RichText, Slugged
 from mezzanine.generic.fields import CommentsField, RatingField
-from mezzanine.utils.models import AdminThumbMixin, upload_to
+from mezzanine.utils.models import AdminThumbMixin, upload_to, get_user_model_name
 from mezzanine.pages.models import Page
+
+user_model_name = get_user_model_name()
 
 class FlatPage(Displayable, RichText, AdminThumbMixin):
     """
@@ -19,9 +21,10 @@ class FlatPage(Displayable, RichText, AdminThumbMixin):
     """
 
     categories = models.ManyToManyField("FlatPageCategory",
-                                        verbose_name=_("Categories"),
+                                        verbose_name=_("Kategoriler"),
                                         blank=True, related_name="flatpages")
-    featured_image = FileField(verbose_name=_("Featured Image"),
+    authors = models.ManyToManyField(user_model_name, verbose_name=_("Yazarlar"), blank=True, related_name="flatpages")
+    featured_image = FileField(verbose_name=_("Resim"),
         upload_to=upload_to("flatpages.FlatPage.featured_image", "flatpages"),
         format="Image", max_length=255, null=True, blank=True)
 
@@ -34,8 +37,7 @@ class FlatPage(Displayable, RichText, AdminThumbMixin):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('home', (), {})
-        #return ("/", (), {"slug": self.slug})
+        return ("flatpage_detail", (), {"slug": self.slug})
 
 class FlatPageCategory(Slugged):
     """
@@ -49,7 +51,7 @@ class FlatPageCategory(Slugged):
     
     @models.permalink
     def get_absolute_url(self):
-        return ("/", (), {"category": self.slug})
+        return ("flatpage_list_category", (), {"category": self.slug})
     
 class FlatPageIndex(Page):
     category = models.ForeignKey(FlatPageCategory)

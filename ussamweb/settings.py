@@ -327,6 +327,17 @@ ADMIN_MENU_ORDER = (
     (_("Users"), ("auth.User", "auth.Group",)),
 )
 
+MIGRATION_MODULES = {
+    'conf': 'mezzanine_migrations.conf',
+    'core': 'mezzanine_migrations.core',
+    'generic': 'mezzanine_migrations.generic',
+    'pages': 'mezzanine_migrations.pages',
+    'blog': 'mezzanine_migrations.blog',
+    'forms': 'mezzanine_migrations.forms',
+    'galleries': 'mezzanine_migrations.galleries',
+    'twitter': 'mezzanine_migrations.twitter',
+}
+
 ##################
 # LOCAL SETTINGS #
 ##################

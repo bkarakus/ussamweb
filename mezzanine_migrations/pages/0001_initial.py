@@ -3,8 +3,9 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
+import django.db.models.deletion
 import mezzanine.core.fields
-import mezzanine.utils.models
+import mezzanine.pages.fields
 
 
 class Migration(migrations.Migration):
@@ -12,13 +13,16 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('sites', '0002_alter_domain_unique'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='FlatPage',
+            name='Page',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('featured_image', mezzanine.core.fields.FileField(blank=True, max_length=255, verbose_name='Featured Image')),
+                ('subtitle', models.CharField(blank=True, max_length=50, null=True, verbose_name='Alt Ba\u015fl\u0131k')),
                 ('keywords_string', models.CharField(blank=True, editable=False, max_length=500)),
                 ('title', models.CharField(max_length=500, verbose_name='Title')),
                 ('title_tr', models.CharField(max_length=500, null=True, verbose_name='Title')),
@@ -41,33 +45,57 @@ class Migration(migrations.Migration):
                 ('expiry_date', models.DateTimeField(blank=True, help_text="With Published chosen, won't be shown after this time", null=True, verbose_name='Expires on')),
                 ('short_url', models.URLField(blank=True, null=True)),
                 ('in_sitemap', models.BooleanField(default=True, verbose_name='Show in sitemap')),
+                ('_order', mezzanine.core.fields.OrderField(null=True, verbose_name='Order')),
+                ('content_model', models.CharField(editable=False, max_length=50, null=True)),
+                ('in_menus', mezzanine.pages.fields.MenusField(blank=True, choices=[(1, 'Top navigation bar'), (2, 'Left-hand tree'), (3, 'Footer')], max_length=100, null=True, verbose_name='Show in menus')),
+                ('titles', models.CharField(editable=False, max_length=1000, null=True)),
+                ('titles_tr', models.CharField(editable=False, max_length=1000, null=True)),
+                ('titles_en', models.CharField(editable=False, max_length=1000, null=True)),
+                ('titles_ar', models.CharField(editable=False, max_length=1000, null=True)),
+                ('login_required', models.BooleanField(default=False, help_text='If checked, only logged in users can view this page', verbose_name='Login required')),
+            ],
+            options={
+                'ordering': ('titles',),
+                'verbose_name': 'Page',
+                'verbose_name_plural': 'Pages',
+            },
+        ),
+        migrations.CreateModel(
+            name='Link',
+            fields=[
+                ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='pages.Page')),
+            ],
+            options={
+                'ordering': ('_order',),
+                'verbose_name': 'Link',
+                'verbose_name_plural': 'Links',
+            },
+            bases=('pages.page',),
+        ),
+        migrations.CreateModel(
+            name='RichTextPage',
+            fields=[
+                ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='pages.Page')),
                 ('content', mezzanine.core.fields.RichTextField(verbose_name='Content')),
                 ('content_tr', mezzanine.core.fields.RichTextField(null=True, verbose_name='Content')),
                 ('content_en', mezzanine.core.fields.RichTextField(null=True, verbose_name='Content')),
                 ('content_ar', mezzanine.core.fields.RichTextField(null=True, verbose_name='Content')),
-                ('featured_image', mezzanine.core.fields.FileField(blank=True, max_length=255, null=True, verbose_name='Featured Image')),
             ],
             options={
-                'ordering': ('-publish_date',),
-                'verbose_name': 'D\xfcz Sayfa',
-                'verbose_name_plural': 'D\xfcz Sayfalar',
+                'ordering': ('_order',),
+                'verbose_name': 'Rich text page',
+                'verbose_name_plural': 'Rich text pages',
             },
-            bases=(models.Model, mezzanine.utils.models.AdminThumbMixin),
+            bases=('pages.page', models.Model),
         ),
-        migrations.CreateModel(
-            name='FlatPageCategory',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=500, verbose_name='Title')),
-                ('title_tr', models.CharField(max_length=500, null=True, verbose_name='Title')),
-                ('title_en', models.CharField(max_length=500, null=True, verbose_name='Title')),
-                ('title_ar', models.CharField(max_length=500, null=True, verbose_name='Title')),
-                ('slug', models.CharField(blank=True, help_text='Leave blank to have the URL auto-generated from the title.', max_length=2000, null=True, verbose_name='URL')),
-            ],
-            options={
-                'ordering': ('title',),
-                'verbose_name': 'Kategori',
-                'verbose_name_plural': 'Kategoriler',
-            },
+        migrations.AddField(
+            model_name='page',
+            name='parent',
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='children', to='pages.Page'),
+        ),
+        migrations.AddField(
+            model_name='page',
+            name='site',
+            field=models.ForeignKey(editable=False, on_delete=django.db.models.deletion.CASCADE, to='sites.Site'),
         ),
     ]

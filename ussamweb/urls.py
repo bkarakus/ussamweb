@@ -27,16 +27,16 @@ urlpatterns += [
     url('^i18n/$', set_language, name='set_language'),
 ]
 
-urlpatterns += [
-    url("^flatpages/", include("flatpages.urls")),
-]
+urlpatterns += i18n_patterns(
+    url("^ussam/", include("flatpages.urls")),
+)
 
 if 'rosetta' in dj_settings.INSTALLED_APPS:
     urlpatterns += [
         url(r'^rosetta/', include('rosetta.urls')),
     ]
 
-urlpatterns += [
+urlpatterns += i18n_patterns(
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.
 
@@ -104,8 +104,7 @@ urlpatterns += [
     # need to use the ``SITE_PREFIX`` setting as well.
 
     # ("^%s/" % settings.SITE_PREFIX, include("mezzanine.urls"))
-
-]
+)
 
 # Adds ``STATIC_URL`` to the context of error pages, so that error
 # pages can use JS, CSS and images.

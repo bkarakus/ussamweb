@@ -15,6 +15,7 @@ from flatpages.models import FlatPage, FlatPageCategory, FlatPageIndex
 
 flatpages_fieldsets = deepcopy(DisplayableAdmin.fieldsets)
 flatpages_fieldsets[0][1]["fields"].insert(1, "categories")
+flatpages_fieldsets[0][1]["fields"].insert(1, "authors")
 flatpages_fieldsets[0][1]["fields"].extend(["content",])
 flatpages_list_display = ["title", "status", "admin_link"]
 flatpages_fieldsets[0][1]["fields"].insert(-2, "featured_image")
