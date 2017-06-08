@@ -11,7 +11,7 @@ from mezzanine.core.fields import FileField
 from mezzanine.core.models import Displayable, Ownable, RichText, Slugged
 from mezzanine.generic.fields import CommentsField, RatingField
 from mezzanine.utils.models import AdminThumbMixin, upload_to
-
+from mezzanine.pages.models import Page
 
 class FlatPage(Displayable, RichText, AdminThumbMixin):
     """
@@ -50,4 +50,11 @@ class FlatPageCategory(Slugged):
     @models.permalink
     def get_absolute_url(self):
         return ("/", (), {"category": self.slug})
+    
+class FlatPageIndex(Page):
+    category = models.ForeignKey(FlatPageCategory)
+    
+    class Meta:
+        verbose_name = _("Kategori Index")
+        verbose_name_plural = _("Kategori Index Sayfaları")
     

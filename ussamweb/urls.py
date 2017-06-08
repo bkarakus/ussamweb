@@ -27,6 +27,10 @@ urlpatterns += [
     url('^i18n/$', set_language, name='set_language'),
 ]
 
+urlpatterns += [
+    url("^flatpages/", include("flatpages.urls")),
+]
+
 if 'rosetta' in dj_settings.INSTALLED_APPS:
     urlpatterns += [
         url(r'^rosetta/', include('rosetta.urls')),
