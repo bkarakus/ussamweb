@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 
 from copy import deepcopy
 
+from django.db import models
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
@@ -13,28 +14,28 @@ from mezzanine.pages.admin import PageAdmin
 
 from flatpages.models import FlatPage, FlatPageCategory, FlatPageIndex
 
-flatpages_fieldsets = deepcopy(DisplayableAdmin.fieldsets)
-flatpages_fieldsets[0][1]["fields"].insert(1, "categories")
-flatpages_fieldsets[0][1]["fields"].insert(1, "authors")
-flatpages_fieldsets[0][1]["fields"].extend(["content",])
-flatpages_list_display = ["title", "status", "admin_link"]
-flatpages_fieldsets[0][1]["fields"].insert(-2, "featured_image")
-flatpages_list_display.insert(0, "admin_thumb")
-flatpages_fieldsets = list(flatpages_fieldsets)
-flatpages_list_filter = deepcopy(DisplayableAdmin.list_filter) + ("categories",)
-
-flatpageindex_extra_fieldsets = ((None, {"fields": ("category",)}),)
-
-
 class FlatPageAdmin(TweetableAdminMixin, DisplayableAdmin):
-    """
-    Admin class for blog posts.
-    """
-
-    fieldsets = flatpages_fieldsets
-    list_display = flatpages_list_display
-    list_filter = flatpages_list_filter
-    filter_horizontal = ("categories",)
+    fieldsets = [
+        (None, {
+            "fields":["title", "status", ("publish_date", "expiry_date"),"featured_image","content",]
+        }),
+         (_("Authors"), {
+            'classes': ('collapse-closed',),
+            'fields': ['authors',]
+        }),
+        (_("Categories"), {
+            'classes': ('collapse-closed',),
+            'fields': ['categories',]
+        }),
+        (_("Meta data"), {
+            "fields":["_meta_title", "slug", ("description", "gen_description"), "keywords", "in_sitemap"], 
+            "classes":("collapse-closed", )
+        }),        
+    ]
+    
+    list_display = ("admin_thumb","title", "status", "admin_link")
+    list_filter = ("status", "keywords__keyword", "categories", "authors")
+    filter_horizontal = ("categories","authors")
 
 
 class FlatPageCategoryAdmin(BaseTranslationModelAdmin):
@@ -53,7 +54,8 @@ class FlatPageCategoryAdmin(BaseTranslationModelAdmin):
             if "flatpages.FlatPageCategory" in items:
                 return True
         return False
-    
+
+flatpageindex_extra_fieldsets = ((None, {"fields": ("category",)}),)   
 class FlatPageIndexAdmin(PageAdmin):
     fieldsets = flatpageindex_extra_fieldsets + deepcopy(PageAdmin.fieldsets)
 

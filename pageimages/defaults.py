@@ -2,11 +2,35 @@
 from mezzanine.conf import register_setting
 
 register_setting(
-    name="SITE_ADDRESS",
-    label=u"Adres",
-    description=u"#Adres_1|Adres_2|Posta Kodu İlçe/il# formatında giriniz",
+    name="SITE_ADDRESS_LINE_1",
+    label=u"Adres (Satır 1)",
+    description=u"Adres (Satır 1)",
     editable=True,
-    default='Adres_1|Adres_2|Posta Kodu İlçe/il'
+    default=''
+)
+
+register_setting(
+    name="SITE_ADDRESS_LINE_2",
+    label=u"Adres (Satır 2)",
+    description=u"Adres (Satır 2)",
+    editable=True,
+    default=''
+)
+
+register_setting(
+    name="SITE_ADDRESS_CITY",
+    label=u"Adres (Satır 3)",
+    description=u"Şehir Adı ve/veya Ülke adı",
+    editable=True,
+    default=''
+)
+
+register_setting(
+    name="SITE_ADDRESS_POSTAL_CODE",
+    label=u"Posta Kodu",
+    description=u"Posta Kodu",
+    editable=True,
+    default=''
 )
 
 register_setting(
@@ -45,8 +69,9 @@ register_setting(
     name="TEMPLATE_ACCESSIBLE_SETTINGS",
     description=("Sequence of setting names available within templates."),
     editable=False,
-    default=("SITE_ADDRESS", "SITE_PHONE",
-             "SITE_FAX", "SITE_EMAIL",
+    default=("SITE_ADDRESS_LINE_1", "SITE_ADDRESS_LINE_2", 
+             "SITE_ADDRESS_POSTAL_CODE", "SITE_ADDRESS_CITY", 
+             "SITE_PHONE", "SITE_FAX", "SITE_EMAIL",
              "SITE_GOOGLE_MAP",),
     append=True,
 )

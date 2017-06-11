@@ -5,6 +5,7 @@ from future.builtins import str
 from django.db import models
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.contenttypes.fields import GenericRelation
 
 from mezzanine.conf import settings
 from mezzanine.core.fields import FileField
