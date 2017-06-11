@@ -1,0 +1,14 @@
+{% load i18n flatpages_tags %}
+{%  get_keywords as keywords %}
+<div class="panel panel-default">
+	<div class="panel-heading">{% trans 'Keywords' %}</div>
+	<div class="panel-body">
+		<div class="tagcloud01">
+			<ul>
+			{% for keyword in keywords %}
+				<li><a href="{% url 'flatpage_list_tag' keyword %}"><span>{{ keyword.title }}</span></a></li>
+			{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>

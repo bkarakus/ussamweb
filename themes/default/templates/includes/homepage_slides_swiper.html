@@ -1,0 +1,22 @@
+{% load i18n mezzanine_tags slides_tags %}
+{% get_homepage_slides as slides %}
+{% if slides %}
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+		{% for slide in slides %}
+		<div class="swiper-slide">
+			<a href="{{ slide.content_object.get_absolute_url }}">
+			<img
+				src="{{ MEDIA_URL }}{% thumbnail slide.image 850 300 %}"
+				class="img-responsive" />
+			</a>
+		</div>
+		{% endfor %}
+	</div>
+	<!-- Add Pagination -->
+	<div class="swiper-pagination"></div>
+	<!-- Add Arrows -->
+	<div class="swiper-button-next"></div>
+	<div class="swiper-button-prev"></div>
+</div>
+{% endif %}
