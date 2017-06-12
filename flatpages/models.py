@@ -60,4 +60,8 @@ class FlatPageIndex(Page):
     class Meta:
         verbose_name = _("Kategori Index")
         verbose_name_plural = _("Kategori Index Sayfaları")
+        
+    @models.permalink
+    def get_absolute_url(self):
+        return ("flatpage_list_category", (), {"category": self.category.slug})
     

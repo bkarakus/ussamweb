@@ -321,7 +321,7 @@ OPTIONAL_APPS = (
 )
 
 ADMIN_MENU_ORDER = (
-    (_("Content"), ("pages.Page", "flatpages.FlatPage", "blog.BlogPost",
+    (_("Content"), ("pages.Page", "flatpages.FlatPage", "flatpages.FlatPageCategory", "blog.BlogPost",
        "generic.ThreadedComment", (_("Media Library"), "media-library"),)),
     (_("Site"), ("sites.Site", "redirects.Redirect", "conf.Setting")),
     (_("Users"), ("auth.User", "auth.Group",)),
