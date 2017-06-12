@@ -178,6 +178,10 @@ blockquote p {
 }
 
 /* ======= Header ======= */
+#logo{
+	width: 100px;
+}
+
 .header .top-bar {
   background: #2f506c;
 }
