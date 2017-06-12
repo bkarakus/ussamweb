@@ -63,6 +63,7 @@ class FlatPageIndex(Page):
         
     def save(self, *args, **kwargs):
         slug = reverse("flatpage_list_category", kwargs={"category": self.category.slug})
-        self.slug = slug
+        slug_parts = slug.strip('/').split('/')[1:]
+        self.slug = '/'.join(slug_parts)
         super(FlatPageIndex, self).save(*args, **kwargs)
     
