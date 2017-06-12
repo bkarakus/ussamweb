@@ -61,6 +61,8 @@ class FlatPageIndex(Page):
         verbose_name = _("Kategori Index")
         verbose_name_plural = _("Kategori Index Sayfaları")
         
-    def get_absolute_url(self):
-        return reverse("flatpage_list_category", (), {"category": self.category.slug})
+    def save(self, *args, **kwargs):
+        slug = reverse("flatpage_list_category", kwargs={"category": self.category.slug})
+        self.slug = slug
+        super(FlatPageIndex, self).save(*args, **kwargs)
     
