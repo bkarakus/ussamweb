@@ -45,7 +45,5 @@ def render_category(context, token):
     if category:
         context['category'] = category
         context['flatpages_list'] = category.flatpages.published()[:10]
-        for f in category.flatpages.published():
-            print f.title
         t = get_template(template_name)
         return t.render(Context(context))
