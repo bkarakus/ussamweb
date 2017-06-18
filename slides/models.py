@@ -10,13 +10,13 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 
-from mezzanine.core.models import Orderable, SiteRelated
+from mezzanine.core.models import Orderable, SiteRelated, LanguageRelated
 from mezzanine.core.models import CONTENT_STATUS_PUBLISHED, CONTENT_STATUS_CHOICES
 from mezzanine.core.managers import DisplayableManager
 from mezzanine.core.fields import FileField
 from mezzanine.utils.models import AdminThumbMixin
 
-class Slide(Orderable, SiteRelated, AdminThumbMixin):
+class Slide(Orderable, SiteRelated, LanguageRelated, AdminThumbMixin):
     """
     Allows for pretty banner images across the top of pages that will cycle
     through each other with a fade effect.

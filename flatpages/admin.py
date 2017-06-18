@@ -44,7 +44,7 @@ class FlatPageCategoryAdmin(BaseTranslationModelAdmin):
     unless explicitly specified.
     """
 
-    fieldsets = ((None, {"fields": ("title","slug")}),)
+    fieldsets = ((None, {"fields": ("baslik_tr", "baslik_en", "baslik_ar","slug")}),)
 
     def has_module_permission(self, request):
         """

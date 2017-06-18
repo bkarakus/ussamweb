@@ -1278,3 +1278,82 @@ blockquote p {
 .footer .bottom-bar .social li a:hover {
   color: #6091ba;
 }
+
+/** owl-carousel-thumb **/
+/** ================= **/
+
+.owl-section{
+	padding: 10px
+}
+
+.owl-carousel-thumb .thumbnail {
+    position:relative;
+    overflow:hidden;
+    z-index:1;
+    margin-bottom:30px;
+}
+ 
+.owl-carousel-thumb .thumbnail .caption {
+    position:absolute;
+    top:-100%;
+    right:0;
+    background-color:rgba(255, 116, 84, 0.8);
+    -webkit-perspective:1000;
+    width:100%;
+    height:100%;
+    padding:2%;
+    text-align:center;
+    color:#fff !important;
+    z-index:2;
+    -webkit-transition:all 0.5s ease-in-out;
+    -moz-transition:all 0.5s ease-in-out;
+    -o-transition:all 0.5s ease-in-out;
+    -ms-transition:all 0.5s ease-in-out;
+    transition:all 0.5s ease-in-out;
+    white-space:nowrap;
+}
+
+.owl-carousel-thumb .thumbnail .caption h4, 
+.owl-carousel-thumb .thumbnail .caption h3, 
+.owl-carousel-thumb .thumbnail .caption h2 {
+	margin-bottom:10px;
+}
+ 
+.owl-carousel-thumb .thumbnail .caption:before{
+    content:"";
+    display:inline-block;
+    vertical-align:middle;
+    width:0;
+    margin-right:-.25em;
+    height:100%; 
+}
+
+.owl-carousel-thumb .thumbnail-caption-holder {
+    display:inline-block;
+    vertical-align:middle;
+    white-space:normal;
+}
+
+.owl-carousel-thumb .thumbnail:hover .caption {
+    top:0%;
+}
+
+.owl-controls{
+	position: absolute;
+	right: 20px;
+	top: 0px;
+}
+
+.owl-carousel .news-item img{
+	width: 200px;
+	float: left;
+}
+
+.owl-carousel .news-item .news-content{
+	margin-left: 215px;
+}
+
+.owl-carousel .news-item .news-content .title{
+	margin-bottom: 5px;
+	font-size: 1.2em;
+}

@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Ahmad Khayyat <akhayyat@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: Mezzanine\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-30 20:47+0000\n"
+"PO-Revision-Date: 2013-01-13 02:41+0000\n"
+"Last-Translator: Ahmad Khayyat <akhayyat@gmail.com>\n"
+"Language-Team: Arabic (http://www.transifex.com/projects/p/mezzanine/"
+"language/ar/)\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: mezzanine/galleries/models.py:46
+msgid "Zip import"
+msgstr "استيراد ملف Zip"
+
+#: mezzanine/galleries/models.py:48
+msgid ""
+"Upload a zip file containing images, and they'll be imported into this "
+"gallery."
+msgstr "ارفع ملف zip يحوي صوراً، وسيتم إدراج الصور في هذا المعرض."
+
+#: mezzanine/galleries/models.py:120
+msgid "Gallery"
+msgstr "معرض صور"
+
+#: mezzanine/galleries/models.py:121
+msgid "Galleries"
+msgstr "معارض الصور"
+
+#: mezzanine/galleries/models.py:128
+msgid "File"
+msgstr "ملف"
+
+#: mezzanine/galleries/models.py:130
+msgid "Description"
+msgstr "الوصف"
+
+#: mezzanine/galleries/models.py:134
+msgid "Image"
+msgstr "صورة"
+
+#: mezzanine/galleries/models.py:135
+msgid "Images"
+msgstr "الصور"

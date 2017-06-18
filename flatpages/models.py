@@ -14,6 +14,8 @@ from mezzanine.generic.fields import CommentsField, RatingField
 from mezzanine.utils.models import AdminThumbMixin, upload_to, get_user_model_name
 from mezzanine.pages.models import Page
 
+from .meta import LocalizeModelBase, Translate
+
 user_model_name = get_user_model_name()
 
 class FlatPage(Displayable, RichText, AdminThumbMixin):
@@ -41,14 +43,24 @@ class FlatPage(Displayable, RichText, AdminThumbMixin):
         return ("flatpage_detail", (), {"slug": self.slug})
 
 class FlatPageCategory(Slugged):
-    """
-    A category for grouping blog posts into a series.
-    """
+    __metaclass__ = LocalizeModelBase
+    
+    baslik_tr = models.CharField(_("Title [TR]"), max_length=500)
+    baslik_en = models.CharField(_("Title [EN]"), max_length=500, blank=True, null=True)
+    baslik_ar = models.CharField(_("Title [AR]"), max_length=500, blank=True, null=True)
+    baslik = Translate
 
     class Meta:
         verbose_name = _("Kategori")
         verbose_name_plural = _("Kategoriler")
         ordering = ("title",)
+        
+    def __unicode__(self):
+        return self.baslik
+        
+    def save(self, *args, **kwargs):
+        self.title = self.baslik_tr
+        super(FlatPageCategory, self).save(*args, **kwargs)
     
     @models.permalink
     def get_absolute_url(self):
