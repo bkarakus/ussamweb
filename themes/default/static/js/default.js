@@ -21,7 +21,7 @@ $(document).ready(function() {
     });
     
     $('#raporlar-owlcarousel').owlCarousel({
-        loop: true,
+        loop: false,
         margin: 10,
         nav: true,
         dots: false,
@@ -41,7 +41,7 @@ $(document).ready(function() {
     });
     
     $('#inceleme-gezileri-owlcarousel').owlCarousel({
-        loop: true,
+        loop: false,
         margin: 10,
         nav: true,
         dots: false,
@@ -61,7 +61,7 @@ $(document).ready(function() {
     });
     
     $('#makaleler-owlcarousel').owlCarousel({
-        loop: true,
+        loop: false,
         margin: 10,
         nav: true,
         dots: false,
@@ -81,7 +81,7 @@ $(document).ready(function() {
     });
     
     $('#kongreler-owlcarousel').owlCarousel({
-        loop: true,
+        loop: false,
         margin: 10,
         nav: true,
         dots: false,
@@ -101,7 +101,7 @@ $(document).ready(function() {
     });
     
     $('#egitim-owlcarousel').owlCarousel({
-        loop: true,
+        loop: false,
         margin: 10,
         nav: true,
         dots: false,
@@ -121,7 +121,7 @@ $(document).ready(function() {
     });
     
     $('#medya-owlcarousel').owlCarousel({
-        loop: true,
+        loop: false,
         margin: 10,
         nav: true,
         dots: false,
@@ -141,7 +141,7 @@ $(document).ready(function() {
     });
     
     $('#haberler-owlcarousel').owlCarousel({
-        loop: true,
+        loop: false,
         margin: 10,
         nav: true,
         dots: false,
