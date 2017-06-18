@@ -41,7 +41,6 @@ def get_category(context, slug):
 @register.render_tag
 def render_category(context, token):
     slug, template_name = token.split_contents()[1:]
-    print slug, template_name
     category = get_category(context, slug)
     if category:
         context['category'] = category
