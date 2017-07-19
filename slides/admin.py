@@ -29,4 +29,4 @@ for admin_class in admin_classes_with_slides:
     else:
         setattr(admin_class, 'inlines', [SlideInline,])
         
-#admin.site.register(Slide, SlideAdmin)
+admin.site.register(Slide, SlideAdmin)
