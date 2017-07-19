@@ -89,7 +89,7 @@ EXTRA_MODEL_FIELDS = (
 
 # If True, the django-modeltranslation will be added to the
 # INSTALLED_APPS setting.
-USE_MODELTRANSLATION = True
+USE_MODELTRANSLATION = False
 
 
 ########################
@@ -272,7 +272,7 @@ INSTALLED_APPS = (
     "pageimages",
     #"rosetta",
     "mezzanine.accounts",
-    #"portlets",
+    "portlets",
     # "mezzanine.mobile",
 )
 
@@ -327,6 +327,7 @@ ADMIN_MENU_ORDER = (
     (_("Users"), ("auth.User", "auth.Group",)),
 )
 
+'''
 MIGRATION_MODULES = {
     'conf': 'mezzanine_migrations.conf',
     'core': 'mezzanine_migrations.core',
@@ -337,6 +338,7 @@ MIGRATION_MODULES = {
     'galleries': 'mezzanine_migrations.galleries',
     'twitter': 'mezzanine_migrations.twitter',
 }
+'''
 
 ##################
 # LOCAL SETTINGS #

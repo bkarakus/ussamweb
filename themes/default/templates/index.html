@@ -14,7 +14,25 @@
 		{% include "includes/homepage_slides_swiper.html" %}
 	</div>
 	<div class="col-md-12">
-		{% render_category raporlar includes/homepage_news.html %}
+		{% render_category haberler 200 130 includes/homepage_news_2.html %}
+	</div>
+	<div class="col-md-6">
+		{% render_category raporlar 200 130 includes/homepage_owl.html %}
+	</div>
+	<div class="col-md-6">
+		{% render_category inceleme-gezileri 200 130 includes/homepage_owl.html %}
+	</div>
+	<div class="col-md-6">
+		{% render_category makaleler 200 280 includes/homepage_owl.html %}
+	</div>
+	<div class="col-md-6">
+		{% render_category kongreler 200 280 includes/homepage_owl.html %}
+	</div>
+	<div class="col-md-6">
+		{% render_category egitimler 200 130 includes/homepage_owl.html %}
+	</div>
+	<div class="col-md-6">
+		{% render_category medya 200 130 includes/homepage_owl.html %}
 	</div>
 </div>
 {% endblock %}

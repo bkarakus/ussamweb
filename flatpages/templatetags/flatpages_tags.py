@@ -40,13 +40,12 @@ def get_category(context, slug):
 
 @register.render_tag
 def render_category(context, token):
-    slug, template_name = token.split_contents()[1:]
-    print slug, template_name
+    slug, width, height, template_name = token.split_contents()[1:]
     category = get_category(context, slug)
     if category:
         context['category'] = category
+        context['width'] = width
+        context['height'] = height
         context['flatpages_list'] = category.flatpages.published()[:10]
-        for f in category.flatpages.published():
-            print f.title
         t = get_template(template_name)
         return t.render(Context(context))

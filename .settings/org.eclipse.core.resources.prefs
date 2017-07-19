@@ -1,8 +1,6 @@
 eclipse.preferences.version=1
 encoding//flatpages/models.py=utf-8
-encoding//mezzanine_migrations/forms/0001_initial.py=utf-8
 encoding//pageimages/defaults.py=utf-8
 encoding//portlets/admin.py=utf-8
 encoding//portlets/models.py=utf-8
-encoding//slides/migrations/0001_initial.py=utf-8
 encoding//ussamweb/settings.py=utf-8

@@ -1,0 +1,886 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# mozgur <mozgurbayhan@gmail.com>, 2013
+# mozgur <mozgurbayhan@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Mezzanine\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-30 20:47+0000\n"
+"PO-Revision-Date: 2013-12-02 18:20+0000\n"
+"Last-Translator: mozgur <mozgurbayhan@gmail.com>\n"
+"Language-Team: Turkish (Turkey) (http://www.transifex.com/projects/p/"
+"mezzanine/language/tr_TR/)\n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: mezzanine/core/admin.py:70
+msgid "This field is required if status is set to published."
+msgstr "Eğer durumu yayınlanmış olarak işaretliyse bu alan gereklidir."
+
+#: mezzanine/core/admin.py:93
+msgid "Meta data"
+msgstr "Meta data"
+
+#: mezzanine/core/defaults.py:22
+msgid "Controls the ordering and grouping of the admin menu."
+msgstr "Yönetici menüsünün sıralamasını ve gruplamasını kontrol eder."
+
+#: mezzanine/core/defaults.py:25 mezzanine/core/models.py:388
+msgid "Content"
+msgstr "İçerik"
+
+#: mezzanine/core/defaults.py:26
+msgid "Media Library"
+msgstr "Medya Kütüphanesi"
+
+#: mezzanine/core/defaults.py:27 mezzanine/core/templates/admin/login.html:59
+msgid "Site"
+msgstr "Site"
+
+#: mezzanine/core/defaults.py:28
+msgid "Users"
+msgstr "Kullanıcılar"
+
+#: mezzanine/core/defaults.py:34
+msgid "Collapse the Admin menu"
+msgstr ""
+
+#: mezzanine/core/defaults.py:35
+msgid ""
+"Controls whether or not the left-hand admin menu is collapsed by default."
+msgstr ""
+
+#: mezzanine/core/defaults.py:43
+msgid ""
+"A sequence of Python dotted paths to models (eg: ``['mezzanine.blog.models."
+"BlogPost',]``) that should be removed from the admin."
+msgstr ""
+
+#: mezzanine/core/defaults.py:52
+msgid "Size of thumbnail previews for image fields in the admin interface."
+msgstr "Resim alanlarının yönetici arayüzündeki önizleme boyutları."
+
+#: mezzanine/core/defaults.py:60
+msgid "Akismet API Key"
+msgstr "Akismet API Anahtarı"
+
+#: mezzanine/core/defaults.py:61
+msgid ""
+"Key for http://akismet.com spam filtering service. Used for filtering "
+"comments and forms."
+msgstr ""
+"http://akismet.com spam filtre servisi için api anahtarı. Yorum ve formları "
+"filtrelemek için kullanır."
+
+#: mezzanine/core/defaults.py:69
+msgid "bit.ly access token"
+msgstr "bit.ly erişim anahtarı"
+
+#: mezzanine/core/defaults.py:70
+msgid "Access token for http://bit.ly URL shortening service."
+msgstr "http://bit.ly URL kısaltma servisi için kullanılacak erişim anahtarı."
+
+#: mezzanine/core/defaults.py:77
+#, fuzzy
+#| msgid ""
+#| "Mezzanine's caching uses a technique know as mint caching. This is where "
+#| "the requested expiry for a cache entry is stored with the cache entry in "
+#| "cache, and the real expiry used has the ``CACHE_SET_DELAY`` added to it. "
+#| "Then on a cache get, the store expiry is checked, and if it has past, the "
+#| "cache entry is set again, and no entry is returned. This tries to ensure "
+#| "that cache misses never occur, and if many clients were to get a cache "
+#| "miss at once, only one would actually need to re-generated the cache "
+#| "entry."
+msgid ""
+"Mezzanine's caching uses a technique know as mint caching. This is where the "
+"requested expiry for a cache entry is stored with the cache entry in cache, "
+"and the real expiry used has the ``CACHE_SET_DELAY`` added to it. Then on a "
+"cache get, the store expiry is checked, and if it has passed, the cache "
+"entry is set again, and no entry is returned. This tries to ensure that "
+"cache misses never occur, and if many clients were to get a cache miss at "
+"once, only one would actually need to re-generated the cache entry."
+msgstr ""
+"Mezzanine's caching uses a technique know as mint caching. This is where the "
+"requested expiry for a cache entry is stored with the cache entry in cache, "
+"and the real expiry used has the ``CACHE_SET_DELAY`` added to it. Then on a "
+"cache get, the store expiry is checked, and if it has past, the cache entry "
+"is set again, and no entry is returned. This tries to ensure that cache "
+"misses never occur, and if many clients were to get a cache miss at once, "
+"only one would actually need to re-generated the cache entry."
+
+#: mezzanine/core/defaults.py:105
+msgid ""
+"A three item sequence, each containing a sequence of template tags used to "
+"render the admin dashboard."
+msgstr ""
+"Üçlü eleman dizisi, her biri admin kontrol panelini render etmek için "
+"template tag dizisi tutar."
+
+#: mezzanine/core/defaults.py:113
+msgid "Device specific template sub-directory to use as the default device."
+msgstr "Varsayılan cihaz olarak kullanılacak cihaza özel template alt dizini "
+
+#: mezzanine/core/defaults.py:121
+msgid ""
+"Mapping of device specific template sub-directory names to the sequence of "
+"strings that may be found in their user agents."
+msgstr ""
+"İstek yapan cihazların 'user agent''lerinde bulunan isimlerin özel şablon "
+"alt dizinleri şeklindeki haritası."
+
+#: mezzanine/core/defaults.py:142
+msgid "If ``True``, website forms will use HTML5 features."
+msgstr "Eğer işaretli ise, web sitesi formları HTML5 özelliklerini kullanır"
+
+#: mezzanine/core/defaults.py:149
+msgid ""
+"If ``True``, failures to send email will happen silently, otherwise an "
+"exception is raised. Defaults to ``settings.DEBUG``."
+msgstr ""
+
+#: mezzanine/core/defaults.py:158
+msgid ""
+"A sequence of fields that will be injected into Mezzanine's (or any "
+"library's) models. Each item in the sequence is a four item sequence. The "
+"first two items are the dotted path to the model and its field name to be "
+"added, and the dotted path to the field class to use for the field. The "
+"third and fourth items are a sequence of positional args and a dictionary of "
+"keyword args, to use when creating the field instance. When specifying the "
+"field class, the path ``django.models.db.`` can be omitted for regular "
+"Django model fields."
+msgstr ""
+"Mezzanine (veya herhangi bir kütüphanenin) modellerine enjekte edilecek  "
+"alanların listesi. İlk iki nesne model ve alanın noktalı olarak gösterilmiş "
+"yolunu, ve alan için kullanılacak olan sınıfın noktalı yolunu temsil eder. "
+"Üçüncü ve dördüncü nesneler ise alan oluşturulurken kullanılacak olan "
+"konumsal argumanlar dizisi ve anahtar kelime sözlüğü argümanlarından oluşur. "
+"Alan sınıfını tanımlarken ``django.models.db.`` yolu sıradan Django model "
+"alanları için dahil edilebilir."
+
+#: mezzanine/core/defaults.py:173
+msgid "Google Analytics ID"
+msgstr "Google Analytics Kimliği"
+
+#: mezzanine/core/defaults.py:174
+msgid "Google Analytics ID (http://www.google.com/analytics/)"
+msgstr "Google Analytics Kimliği (http://www.google.com/analytics/)"
+
+#: mezzanine/core/defaults.py:181
+#, fuzzy
+#| msgid ""
+#| "A sequence mapping host names to themes, allowing different templates to "
+#| "be served per HTTP hosts Each item in the sequence is a two item "
+#| "sequence, containing a host such as ``othersite.example.com``, and the "
+#| "name of an importable Python package for the theme. If the host is "
+#| "matched for a request, the templates directory inside the theme package "
+#| "will be first searched when loading templates."
+msgid ""
+"A sequence mapping host names to themes, allowing different templates to be "
+"served per HTTP host. Each item in the sequence is a two item sequence, "
+"containing a host such as ``othersite.example.com``, and the name of an "
+"importable Python package for the theme. If the host is matched for a "
+"request, the templates directory inside the theme package will be first "
+"searched when loading templates."
+msgstr ""
+"A sequence mapping host names to themes, allowing different templates to be "
+"served per HTTP hosts Each item in the sequence is a two item sequence, "
+"containing a host such as ``othersite.example.com``, and the name of an "
+"importable Python package for the theme. If the host is matched for a "
+"request, the templates directory inside the theme package will be first "
+"searched when loading templates."
+
+#: mezzanine/core/defaults.py:195
+msgid "If ``True``, front-end inline editing will be enabled."
+msgstr ""
+
+#: mezzanine/core/defaults.py:202
+msgid "Name of the jQuery file."
+msgstr "JQuery dosyasının adı."
+
+#: mezzanine/core/defaults.py:203
+msgid "Name of the jQuery file found in mezzanine/core/static/mezzanine/js/"
+msgstr ""
+"mezzanine/core/static/mezzanine/js/ altında bulunan JQuery dosyasının adı."
+
+#: mezzanine/core/defaults.py:211
+msgid "Name of the jQuery UI file."
+msgstr "JQuery UI dosyasının adı"
+
+#: mezzanine/core/defaults.py:212
+msgid "Name of the jQuery UI file found in mezzanine/core/static/mezzanine/js/"
+msgstr ""
+"mezzanine/core/static/mezzanine/js/ içinde bulunan JQuery UI dosyasının adı"
+
+#: mezzanine/core/defaults.py:220
+msgid "Max paging links"
+msgstr "En fazla sayfalama linki"
+
+#: mezzanine/core/defaults.py:221
+msgid "Max number of paging links to display when paginating."
+msgstr "Sayfalanma gösterilirken kullanılacak en fazla sayfalama linki sayısı."
+
+#: mezzanine/core/defaults.py:228
+msgid "Media library per site"
+msgstr "Site başına media kütüphanesi"
+
+#: mezzanine/core/defaults.py:229
+msgid ""
+"If ``True``, each site will use its own directory within the filebrowser "
+"media library."
+msgstr ""
+"Eğer işaretli ise, her site dosya yöneticisinden sadece kendi media "
+"kütüphanesine erişebilir."
+
+#: mezzanine/core/defaults.py:237
+msgid ""
+"Models that subclass ``Ownable`` and use the ``OwnableAdmin`` have their "
+"admin change-list records filtered down to records owned by the current "
+"user. This setting contains a sequence of models in the format ``app_label."
+"object_name``, that when subclassing ``Ownable``, will still show all "
+"records in the admin change-list interface, regardless of the current user."
+msgstr ""
+"Models that subclass ``Ownable`` and use the ``OwnableAdmin`` have their "
+"admin change-list records filtered down to records owned by the current "
+"user. This setting contains a sequence of models in the format ``app_label."
+"object_name``, that when subclassing ``Ownable``, will still show all "
+"records in the admin change-list interface, regardless of the current user."
+
+#: mezzanine/core/defaults.py:249
+msgid ""
+"Dotted package path and class name of the widget to use for the "
+"``RichTextField``."
+msgstr ""
+"Zengin metin editörü için kullanılacak olan görsel bileşenin noktalı paket "
+"yolu ve sınıf adı."
+
+#: mezzanine/core/defaults.py:257
+msgid ""
+"List of HTML tags that won't be stripped from ``RichTextField`` instances."
+msgstr ""
+"Zengin metin editörlerinden ayıklanmayacak olan HTML  etiketleri listesi."
+
+#: mezzanine/core/defaults.py:274
+msgid ""
+"List of HTML attributes that won't be stripped from ``RichTextField`` "
+"instances."
+msgstr ""
+"Zengin metin editörlerinden ayıklanmayacak olan HTML  özelllikleri listesi."
+
+#: mezzanine/core/defaults.py:292
+msgid ""
+"List of inline CSS styles that won't be stripped from ``RichTextField`` "
+"instances."
+msgstr "Zengin metin editöründen ayıklanmayacak olan satıriçi CSS stil listesi"
+
+#: mezzanine/core/defaults.py:302
+#, fuzzy
+#| msgid ""
+#| "Dotted path to the function to call on a ``RichTextField`` value before "
+#| "it is rendered to the template."
+msgid ""
+"List of dotted paths to functions, called in order, on a ``RichTextField`` "
+"value before it is rendered to the template."
+msgstr ""
+"Zengin metin editörü html şablonunda render edilmeden önce çağırılacak olan "
+"fonksiyonun nokta ile gösterilmiş yolu."
+
+#: mezzanine/core/defaults.py:312
+msgid "High"
+msgstr "Yüksek"
+
+#: mezzanine/core/defaults.py:313
+msgid "Low (allows video, iframe, Flash, etc)"
+msgstr "Düşük(video , iframe, flash vb. izin verir)"
+
+#: mezzanine/core/defaults.py:314
+msgid "No filtering"
+msgstr "Filtreleme yok"
+
+#: mezzanine/core/defaults.py:319
+msgid "Rich Text filter level"
+msgstr "Zengin metin filtreleme seviyesi"
+
+#: mezzanine/core/defaults.py:320
+msgid ""
+"*Do not change this setting unless you know what you're doing.*\n"
+"\n"
+"When content is saved in a Rich Text (WYSIWYG) field, unsafe HTML tags and "
+"attributes are stripped from the content to protect against staff members "
+"intentionally adding code that could be used to cause problems, such as "
+"changing their account to a super-user with full access to the system.\n"
+"\n"
+"This setting allows you to change the level of filtering that occurs. "
+"Setting it to low will allow certain extra tags to be permitted, such as "
+"those required for embedding video. While these tags are not the main "
+"candidates for users adding malicious code, they are still considered "
+"dangerous and could potentially be mis-used by a particularly technical "
+"user, and so are filtered out when the filtering level is set to high.\n"
+"\n"
+"Setting the filtering level to no filtering, will disable all filtering, and "
+"allow any code to be entered by staff members, including script tags."
+msgstr ""
+"*Ne yaptığınızdan emin değilseniz bu ayarları değiştirmeyin.*⏎\n"
+"⏎\n"
+"Zengin metin editörü (WYSIWYG) alanına bir içerik kaydedildiği zaman, "
+"sakıncalı olabilecek HTML etiketleri ,diğer kullanıcıların kendi kullanıcı "
+"hesaplarına tam yetki vermesi gibi sorun çıkartabilecek kodları kasten "
+"girmesini engellemek için ayıklanır.⏎\n"
+"⏎\n"
+"Bu ayar sizin filtreleme seviyesini değiştirmenize olanak tanır. Düşük "
+"olarak işaretlemek, video eklemek vs. için kullanılabilecek bazı kodların "
+"girilmesine izin verir.\n"
+"\n"
+"Bu kodlar zararlı içerik girmek için temel yöntemler olarak kullanılmasa da "
+"yine de teknik bir kullanıcının elinde tehlikeli olabilecek kodları "
+"eklemesine olanak sağlayabilir.Filtreleme seviyesini yüksek olarak "
+"işaretlemek bu sorunu ortadan kaldırır.⏎\n"
+"⏎\n"
+"Filtreleme seviyesini filtreleme yok olarak ayarlamak, script etiketleri de "
+"olmak üzere herhangi bir kodun eklenmesine olanak tanır."
+
+#: mezzanine/core/defaults.py:343
+msgid ""
+"Sequence of models that will be provided by default as choices in the search "
+"form. Each model should be in the format ``app_label.model_name``. Only "
+"models that subclass ``mezzanine.core.models.Displayable`` should be used."
+msgstr ""
+"Sequence of models that will be provided by default as choices in the search "
+"form. Each model should be in the format ``app_label.model_name``. Only "
+"models that subclass ``mezzanine.core.models.Displayable`` should be used."
+
+#: mezzanine/core/defaults.py:353
+msgid "Search results per page"
+msgstr "Sayfa başına arama sonucu"
+
+#: mezzanine/core/defaults.py:354
+msgid "Number of results shown in the search results page."
+msgstr "Arama sonuçları sayfasında gösterilecek olan sonuç sayısı."
+
+#: mezzanine/core/defaults.py:361
+msgid ""
+"A URL prefix for mounting all of Mezzanine's urlpatterns under. When using "
+"this, you'll also need to manually apply it to your project's root ``urls."
+"py`` module. The root ``urls.py`` module provided by Mezzanine's ``mezzanine-"
+"project`` command contains an example of this towards its end."
+msgstr ""
+"Mezzanine'in url paternlerinin altına bağlanacağı URL öneki.Bunu "
+"kullanırken , aynı zamanda projenizin kök dizinindeki ``urls.py`` modülüne "
+"de eklemelisiniz. Kök dizinin ``urls.py`` modülü  Mezzanine'in ``mezzanine-"
+"project``  komutu tarafından oluşturulurken modülün en sonunda bununla "
+"ilgili bir örnek de oluşturur."
+
+#: mezzanine/core/defaults.py:372
+msgid "Site Title"
+msgstr "Site Başlığı"
+
+#: mezzanine/core/defaults.py:373
+msgid ""
+"Title that will display at the top of the site, and be appended to the "
+"content of the HTML title tags on every page."
+msgstr ""
+"Sitenin en üstünde gözükecek, ve her sayfada HTML title etiketlerine "
+"eklenecek olan başlık bilgisi."
+
+#: mezzanine/core/defaults.py:382
+msgid "Tagline"
+msgstr "Etiket satırı"
+
+#: mezzanine/core/defaults.py:383
+msgid "A tag line that will appear at the top of all pages."
+msgstr "Bütün sayfaların üstünde bir etiket satırı gösterir."
+
+#: mezzanine/core/defaults.py:385
+msgid "An open source content management platform."
+msgstr "Açık kaynak kodlu bir içerik yönetim sistemi"
+
+#: mezzanine/core/defaults.py:391
+#, fuzzy
+#| msgid ""
+#| "Dotted Python path to the callable for converting strings into URL slugs. "
+#| "Defaults to ``mezzanine.utils.urls.slugify_unicode`` which allows for non-"
+#| "ascii URLS. Change to ``django.template.defaultfilters.slugify`` to use "
+#| "Django's slugify function, or something of your own if required."
+msgid ""
+"Dotted Python path to the callable for converting strings into URL slugs. "
+"Defaults to ``mezzanine.utils.urls.slugify_unicode`` which allows for non-"
+"ascii URLs. Change to ``django.template.defaultfilters.slugify`` to use "
+"Django's slugify function, or something of your own if required."
+msgstr ""
+"Dotted Python path to the callable for converting strings into URL slugs. "
+"Defaults to ``mezzanine.utils.urls.slugify_unicode`` which allows for non-"
+"ascii URLS. Change to ``django.template.defaultfilters.slugify`` to use "
+"Django's slugify function, or something of your own if required."
+
+#: mezzanine/core/defaults.py:402
+msgid ""
+"Sequence of dotted Python paths to callable functions used for checking "
+"posted content (such as forms or comments) is spam. Each function should "
+"accept three arguments: the request object, the form object, and the URL "
+"that was posted from. Defaults to ``mezzanine.utils.views.is_spam_akismet`` "
+"which will use the http://akismet.com spam filtering service when the "
+"``AKISMET_API_KEY`` setting is configured."
+msgstr ""
+"Sequence of dotted Python paths to callable functions used for checking "
+"posted content (such as forms or comments) is spam. Each function should "
+"accept three arguments: the request object, the form object, and the URL "
+"that was posted from. Defaults to ``mezzanine.utils.views.is_spam_akismet`` "
+"which will use the http://akismet.com spam filtering service when the "
+"``AKISMET_API_KEY`` setting is configured."
+
+#: mezzanine/core/defaults.py:415
+msgid "Enable SSL"
+msgstr "SSL etkin"
+
+#: mezzanine/core/defaults.py:416
+msgid ""
+"If ``True``, users will be automatically redirected to HTTPS for the URLs "
+"specified by the ``SSL_FORCE_URL_PREFIXES`` setting."
+msgstr ""
+"Eğer işaretli ise, kullanıcılar ``SSL_FORCE_URL_PREFIXES`` ayarında "
+"belirlenen URL'ler için HTTPS'e yönlendirilirler."
+
+#: mezzanine/core/defaults.py:425
+msgid "Force Host"
+msgstr "Sunucuyu Zorla"
+
+#: mezzanine/core/defaults.py:426
+msgid ""
+"Host name that the site should always be accessed via that matches the SSL "
+"certificate."
+msgstr ""
+"SSL sertifikasıyla eşleşen ve sitenin sürekli erişilebileceği alan adı."
+
+#: mezzanine/core/defaults.py:444
+msgid ""
+"If ``True``, only URLs specified by the ``SSL_FORCE_URL_PREFIXES`` setting "
+"will be accessible over SSL, and all other URLs will be redirected back to "
+"HTTP if accessed over HTTPS."
+msgstr ""
+"Eğer işaretli ise , sadece ``SSL_FORCE_URL_PREFIXES`` ayarı tarafından "
+"tanımlanmış URL'ler  SSL tarafından erişilebilir , ve HTTPS ile erişilmeye "
+"çalışılan diğer tüm URL'ler HTTP'ye yönlendirilirler."
+
+#: mezzanine/core/defaults.py:454
+msgid "List of words which will be stripped from search queries."
+msgstr "Arama sorgularından ayıklanacak olan kelime listesi."
+
+#: mezzanine/core/defaults.py:511
+msgid "Tag Cloud Sizes"
+msgstr "Etiket Bulut Boyutları"
+
+#: mezzanine/core/defaults.py:512
+msgid "Number of different sizes for tags when shown as a cloud."
+msgstr "Bulutta etiketlerin kaç farklı boyutta gösterileceğinin sayısı."
+
+#: mezzanine/core/defaults.py:519
+msgid "Sequence of setting names available within templates."
+msgstr "Template'ler içindeki ayar isimleri listesi."
+
+#: mezzanine/core/defaults.py:537
+msgid ""
+"Directory name to store thumbnails in, that will be created relative to the "
+"original image's directory."
+msgstr ""
+"Resim önizlemelerin tutulacağı dizinin adı. Orjinal resimler dizininin yolu "
+"baz alınarak yaratılır."
+
+#: mezzanine/core/defaults.py:545
+msgid ""
+"URL for the JavaScript file (relative to ``STATIC_URL``) that handles "
+"configuring TinyMCE when the default ``RICHTEXT_WIDGET_CLASS`` is used."
+msgstr ""
+"Varsayılan ``RICHTEXT_WIDGET_CLASS`` kullanıldığında TinyMCE'i konfigüre "
+"eden JavaScript dosyasının URL adresi (``STATIC_URL``ye göre göreceli)"
+
+#: mezzanine/core/defaults.py:554
+msgid ""
+"Dict mapping file field names in the format ``app_label.model_name."
+"field_name`` to the Python dotted path to function names that will be used "
+"for the file field's ``upload_to`` argument."
+msgstr ""
+"Dict mapping file field names in the format ``app_label.model_name."
+"field_name`` to the Python dotted path to function names that will be used "
+"for the file field's ``upload_to`` argument."
+
+#: mezzanine/core/defaults.py:570
+#, fuzzy
+#| msgid ""
+#| "If ``True``, the south application will be automatically added to the "
+#| "``INSTALLED_APPS`` setting."
+msgid ""
+"If ``True``, the django-modeltranslation application will be automatically "
+"added to the ``INSTALLED_APPS`` setting."
+msgstr ""
+"Eğer işaretli ise ,south uygulaması atomatik olarak ``INSTALLED_APPS``a "
+"eklenir."
+
+#: mezzanine/core/defaults.py:578
+msgid ""
+"Unique random string like ``SECRET_KEY``, but used for two-phased cache "
+"responses. Like ``SECRET_KEY``, should be automatically generated by the "
+"``mezzanine-project`` command."
+msgstr ""
+
+#: mezzanine/core/fields.py:41
+#, python-format
+msgid "Could not import the value of settings.RICHTEXT_WIDGET_CLASS: %s"
+msgstr "settings.RICHTEXT_WIDGET_CLASS: %s verisi import edilemiyor"
+
+#: mezzanine/core/managers.py:401 mezzanine/core/templates/admin/index.html:15
+#: mezzanine/core/templates/index.html:4 mezzanine/core/templates/index.html:5
+#: mezzanine/core/templates/index.html:8
+#: mezzanine/core/templates/search_results.html:13
+msgid "Home"
+msgstr "Anasayfa"
+
+#: mezzanine/core/middleware.py:47
+#, python-format
+msgid ""
+"Your account is using the default password, please <a href='%s'>change it</"
+"a> immediately."
+msgstr ""
+
+#: mezzanine/core/models.py:94 mezzanine/core/models.py:148
+msgid "Title"
+msgstr "Başlık"
+
+#: mezzanine/core/models.py:95
+msgid "URL"
+msgstr "URL"
+
+#: mezzanine/core/models.py:96
+msgid "Leave blank to have the URL auto-generated from the title."
+msgstr "URL'nin otomatik olarak başlıktan türetilmesi için boş bırakınız."
+
+#: mezzanine/core/models.py:138
+msgid "View on site"
+msgstr "Site üzerinde görüntüle"
+
+#: mezzanine/core/models.py:150
+msgid ""
+"Optional title to be used in the HTML title tag. If left blank, the main "
+"title field will be used."
+msgstr ""
+"Sadece HTML title etiketi için kullanılacak isteğe bağlı başlık. Eğer boş "
+"bırakılırsa ana başlık bilgisi kullanılır."
+
+#: mezzanine/core/models.py:152
+msgid "Description"
+msgstr "Tanımlama"
+
+#: mezzanine/core/models.py:153
+msgid "Generate description"
+msgstr "Açıklama oluştur"
+
+#: mezzanine/core/models.py:154
+msgid ""
+"If checked, the description will be automatically generated from content. "
+"Uncheck if you want to manually set a custom description."
+msgstr ""
+"Eğer işaretliyse, açıklama içerikten otomatik olarak oluşturulacaktır. Eğer "
+"elle bir açıklama girmek istiyorsanız işaretlemeden bırakın."
+
+#: mezzanine/core/models.py:157
+msgid "Keywords"
+msgstr "Anahtar Kelimeler"
+
+#: mezzanine/core/models.py:237
+msgid "Draft"
+msgstr "Taslak"
+
+#: mezzanine/core/models.py:238
+msgid "Published"
+msgstr "Yayınlanmış"
+
+#: mezzanine/core/models.py:251
+msgid "Status"
+msgstr "Durum"
+
+#: mezzanine/core/models.py:253
+msgid "With Draft chosen, will only be shown for admin users on the site."
+msgstr "Taslak seçili ise, sitede sadece admin kullanıcılarına gösterilir."
+
+#: mezzanine/core/models.py:255 mezzanine/core/models.py:288
+msgid "Published from"
+msgstr "Kaynak"
+
+#: mezzanine/core/models.py:256
+msgid "With Published chosen, won't be shown until this time"
+msgstr "Yayınlanmış seçilmesi ile bu zaman kadar gösterilmiyordu"
+
+#: mezzanine/core/models.py:258
+msgid "Expires on"
+msgstr "Sona erme tarihi"
+
+#: mezzanine/core/models.py:259
+msgid "With Published chosen, won't be shown after this time"
+msgstr "Yayınlanmış seçili ise bu zamandan sonra gösterilmeyecek"
+
+#: mezzanine/core/models.py:262
+msgid "Show in sitemap"
+msgstr "Site haritasında göster"
+
+#: mezzanine/core/models.py:428
+msgid "Order"
+msgstr "Sipariş"
+
+#: mezzanine/core/models.py:513 mezzanine/core/models.py:583
+msgid "Author"
+msgstr "Yazar"
+
+#: mezzanine/core/models.py:586
+msgid "Sites"
+msgstr "Siteler"
+
+#: mezzanine/core/models.py:589
+msgid "Site permission"
+msgstr "Site izni"
+
+#: mezzanine/core/models.py:590
+msgid "Site permissions"
+msgstr "Site izinleri"
+
+#: mezzanine/core/templates/admin/base_site.html:13
+msgid "View site"
+msgstr "Siteye dön"
+
+#: mezzanine/core/templates/admin/includes/app_list.html:20
+#: mezzanine/core/templates/admin/includes/content_typed_change_list.html:24
+msgid "Add"
+msgstr "Ekle"
+
+#: mezzanine/core/templates/admin/includes/app_list.html:27
+#: mezzanine/core/templates/includes/language_selector.html:19
+msgid "Change"
+msgstr "Değiştir"
+
+#: mezzanine/core/templates/admin/includes/recent_actions.html:4
+msgid "Recent Actions"
+msgstr "Önceki Eylemler"
+
+#: mezzanine/core/templates/admin/includes/recent_actions.html:5
+msgid "My Actions"
+msgstr "Benim Eylemlerim"
+
+#: mezzanine/core/templates/admin/includes/recent_actions.html:9
+msgid "None available"
+msgstr "Hiçbiri uygun değil"
+
+#: mezzanine/core/templates/admin/index.html:17
+msgid "Dashboard"
+msgstr "Kontrol Paneli"
+
+#: mezzanine/core/templates/admin/login.html:24
+msgid "You don't have permission to access the admin for this site."
+msgstr "Bu sitey için yönetici arayüzüne erişme hakkına sahip değilsiniz"
+
+#: mezzanine/core/templates/admin/login.html:31
+msgid "Username or email:"
+msgstr "Kullanıcı adı veya e-posta:"
+
+#: mezzanine/core/templates/admin/login.html:35
+msgid "Password:"
+msgstr "Parola"
+
+#: mezzanine/core/templates/admin/login.html:42
+msgid "Language"
+msgstr ""
+
+#: mezzanine/core/templates/admin/login.html:53
+msgid "Interface:"
+msgstr "Arayüz:"
+
+#: mezzanine/core/templates/admin/login.html:56
+#: mezzanine/core/templates/includes/editable_toolbar.html:8
+msgid "Admin"
+msgstr "Yönetici"
+
+#: mezzanine/core/templates/admin/login.html:63
+msgid "Log in"
+msgstr "Giriş"
+
+#: mezzanine/core/templates/admin/login.html:66
+msgid "Forgot password?"
+msgstr "Şifrenizi mi unuttunuz?"
+
+#: mezzanine/core/templates/base.html:55
+msgid "Toggle Navigation"
+msgstr ""
+
+#: mezzanine/core/templates/base.html:135
+msgid "Powered by"
+msgstr "Altyapı sağlayıcıları"
+
+#: mezzanine/core/templates/base.html:138
+msgid "and"
+msgstr "ve"
+
+#: mezzanine/core/templates/base.html:141
+msgid "Theme by"
+msgstr "Tema sahibi"
+
+#: mezzanine/core/templates/base.html:144
+msgid "View Mobile Site"
+msgstr "Mobil siteye bak"
+
+#: mezzanine/core/templates/errors/404.html:6
+#: mezzanine/core/templates/errors/404.html:10
+#: mezzanine/core/templates/errors/404.html:15
+msgid "Page not found"
+msgstr "Sayfa Bulunamadı"
+
+#: mezzanine/core/templates/errors/404.html:16
+msgid "The page you requested does not exist."
+msgstr "Aradığınız sayfa mevcut değil"
+
+#: mezzanine/core/templates/errors/500.html:6
+#: mezzanine/core/templates/errors/500.html:10
+#: mezzanine/core/templates/errors/500.html:15
+msgid "Error"
+msgstr "Hata"
+
+#: mezzanine/core/templates/errors/500.html:16
+msgid "Sorry, an error occurred."
+msgstr "Özür dileriz, bir hata oluştu."
+
+#: mezzanine/core/templates/includes/editable_form.html:16
+msgid "Save"
+msgstr "Kaydet"
+
+#: mezzanine/core/templates/includes/editable_form.html:17
+msgid "Cancel"
+msgstr "İptal"
+
+#: mezzanine/core/templates/includes/editable_form.html:25
+msgid "Edit"
+msgstr "Düzenle"
+
+#: mezzanine/core/templates/includes/editable_toolbar.html:9
+msgid "Log out"
+msgstr "Çıkış"
+
+#: mezzanine/core/templates/includes/form_errors.html:8
+msgid "Please correct the errors below."
+msgstr ""
+
+#: mezzanine/core/templates/includes/form_fields.html:26
+msgid "required"
+msgstr ""
+
+#: mezzanine/core/templates/includes/pagination.html:7
+#: mezzanine/core/views.py:203
+msgid "Page"
+msgstr "Sayfa"
+
+#: mezzanine/core/templates/includes/pagination.html:7
+msgid "of"
+msgstr "den"
+
+#: mezzanine/core/templates/includes/search_form.html:5
+msgid "Search"
+msgstr "Arama"
+
+#: mezzanine/core/templates/includes/search_form.html:14
+#: mezzanine/core/views.py:128
+msgid "Everything"
+msgstr "Herşey"
+
+#: mezzanine/core/templates/includes/search_form.html:26
+msgid "Go"
+msgstr "Git"
+
+#: mezzanine/core/templates/index.html:12
+msgid ""
+"\n"
+"<h2>Congratulations!</h2>\n"
+"<p>\n"
+"    Welcome to your new Mezzanine powered website.\n"
+"    Here are some quick links to get you started:\n"
+"</p>\n"
+"<ul>\n"
+"    <li><a href=\"/admin/\">Log in to the admin interface</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/content-architecture.html"
+"\">Creating custom page types</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/frequently-asked-questions."
+"html#templates\">Modifying HTML templates</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/frequently-asked-questions."
+"html#why-isn-t-the-homepage-a-page-object-i-can-edit-via-the-admin"
+"\">Changing this homepage</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/frequently-asked-questions."
+"html\">Other frequently asked questions</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/configuration.html#default-"
+"settings\">Full list of settings</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/deployment.html\">Deploying "
+"to a production server</a></li>\n"
+"</ul>\n"
+msgstr ""
+"\n"
+"<h2>Tebrikler!</h2>\n"
+"<p>\n"
+"    Mezzanin altyapısına sahip sitenize hoşgeldiniz.\n"
+"    Başlangıç için bir kaç hızlı link:\n"
+"</p>\n"
+"<ul>\n"
+"    <li><a href=\"/admin/\">Admin arayüzüne giriş</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/content-architecture.html"
+"\">İsteğe özel sayfa tipleri hazırlamak</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/frequently-asked-questions."
+"html#templates\">HTML templatelerini uyarlamak</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/frequently-asked-questions."
+"html#why-isn-t-the-homepage-a-page-object-i-can-edit-via-the-admin\">Bu "
+"anasayfayı değiştirmek</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/frequently-asked-questions."
+"html\">Diğer sık sorulan sorular</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/configuration.html#default-"
+"settings\">Tüm ayarların listesi</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/deployment.html\">Nihai "
+"sunucuya yüklemek</a></li>\n"
+"</ul>\n"
+
+#: mezzanine/core/templates/search_results.html:5
+#: mezzanine/core/templates/search_results.html:6
+#: mezzanine/core/templates/search_results.html:15
+msgid "Search Results"
+msgstr "Arama Sonuçları"
+
+#: mezzanine/core/templates/search_results.html:22
+#, python-format
+msgid ""
+"\n"
+"No results were found in %(search_type)s matching your query: %(query)s\n"
+msgstr ""
+"\n"
+"%(search_type)s içinde  %(query)s sorgunuzla uyuşan hiç bir sonuç "
+"bulunamadı.\n"
+
+#: mezzanine/core/templates/search_results.html:26
+#, python-format
+msgid ""
+"\n"
+"Showing %(start)s to %(end)s of %(total)s results in %(search_type)s "
+"matching your query: %(query)s\n"
+msgstr ""
+"\n"
+"%(search_type)s içinde  %(query)s sorgunuza uyan toplam %(total)s arama "
+"sonucunun %(start)s ile %(end)s arasındaki kısımları gösteriliyor.\n"
+
+#: mezzanine/core/templates/search_results.html:47
+msgid "read more"
+msgstr "daha fazlasını oku"
+
+#: mezzanine/core/views.py:101
+msgid "Permission denied"
+msgstr "Erişim engellendi"
+
+#~ msgid "Unregister these models from the admin."
+#~ msgstr "Bu modelleri admin'den unregister edin."
+
+#~ msgid "Add another"
+#~ msgstr "Yenisini ekle"
