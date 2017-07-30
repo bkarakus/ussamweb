@@ -159,5 +159,27 @@ $(document).ready(function() {
             }
         }
     });
+    
+    var makaleSwiper = new Swiper('#makaleler-swiper', {
+        slidesPerView: 5,
+        spaceBetween: 1,
+        simulateTouch: false,
+        direction: 'vertical',
+        nextButton: '#section-makaleler .owl-next',
+        prevButton: '#section-makaleler .owl-prev',
+        autoplay: 7000,
+        speed: 750
+    });
+    
+    var makaleSwiper = new Swiper('#makaleler-raporlar', {
+        slidesPerView: 5,
+        spaceBetween: 1,
+        simulateTouch: false,
+        direction: 'vertical',
+        nextButton: '#section-raporlar .owl-next',
+        prevButton: '#section-raporlar .owl-prev',
+        autoplay: 7000,
+        speed: 750
+    });
 
 });

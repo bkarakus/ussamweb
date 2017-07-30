@@ -1,0 +1,32 @@
+{% load i18n mezzanine_tags slides_tags %} 
+<!-- Begin Recent Work + Clients -->
+<section class="owl-section border-top owl-theme" id="section-{{ category.slug }}">
+	<div class="heading">
+		<h4><span class=""></span>{{ category.baslik }}</h4>
+		<div class="owl-controls">
+			<div id="customNav" class="owl-nav">
+				<div class="owl-prev">
+					<i class="fa fa-chevron-left"></i>
+				</div>
+				<div class="owl-next">
+					<i class="fa fa-chevron-right"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="{{ category.slug }}-swiper" class="swiper-container swiper-container-vertical">
+		<div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate(0px, -32.2px);">
+			{% for flatpage in flatpages_list %}
+			<div class="swiper-slide aNew swiper-slide-prev"
+				style="height: 31.2px; margin-bottom: 1px;">
+				<a href="{{ flatpage.get_absolute_url }}"
+					title="{{ flatpage.title }}">
+				{{ flatpage.title }}	
+				</a>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section><!-- /section -->
+<!-- End Recent Work + Clients -->
+{{ flatpage.title }}
