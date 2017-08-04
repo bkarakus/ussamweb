@@ -5,10 +5,12 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.views.i18n import set_language
 from django.conf import settings as dj_settings
+from django.http.response import HttpResponse
 
 from mezzanine.core.views import direct_to_template
 from mezzanine.pages.views import page as mezzanine_page_view
 from mezzanine.conf import settings
+
 
 
 admin.autodiscover()
@@ -17,7 +19,13 @@ admin.autodiscover()
 # You can also change the ``home`` view to add your own functionality
 # to the project's homepage.
 
-urlpatterns = i18n_patterns(
+urlpatterns = [
+    url("^robots.txt$",
+        lambda r: HttpResponse("User-agent: *\nAllow: /",
+                               content_type="text/plain")),
+]
+
+urlpatterns += i18n_patterns(
     # Change the admin prefix here to use an alternate URL for the
     # admin interface, which would be marginally more secure.
     url("^admin/", include(admin.site.urls)),
