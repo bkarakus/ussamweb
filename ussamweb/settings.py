@@ -266,13 +266,13 @@ INSTALLED_APPS = (
     "mezzanine.forms",
     "mezzanine.galleries",
     "mezzanine.twitter",
-    "polymorphic",
+    #"polymorphic",
     "flatpages",
     "slides",
     "pageimages",
     #"rosetta",
     "mezzanine.accounts",
-    "portlets",
+    #"portlets",
     # "mezzanine.mobile",
 )
 
