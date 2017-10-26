@@ -19,7 +19,6 @@ class SlideInline(StackedDynamicInlineAdmin, GenericStackedInline):
     model = Slide
     form = AlwaysChangedModelForm
     readonly_fields = ('status', 'publish_date', 'expiry_date')
-    max_num = 1
 
 admin_classes_with_slides = [PageAdmin, GalleryAdmin, FlatPageAdmin]
 

@@ -26,5 +26,6 @@ register = template.Library()
 
 @register.assignment_tag(takes_context=True)
 def get_homepage_slides(context, page=None):
-    slides = Slide.objects.published()[:10]
+    slides = Slide.objects.published()
+    slides = slides.filter(show_on_homepage=True)[:10]
     return slides

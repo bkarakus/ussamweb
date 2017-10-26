@@ -444,7 +444,10 @@ blockquote p {
     width: 100%;
     height: 100%;
     margin-bottom: 20px;
+    padding: 5px;
+    border: 1px solid #dedede;
 }
+
 .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -1353,6 +1356,15 @@ blockquote p {
 	margin-left: 215px;
 }
 
+.owl-carousel .saglik-analizleri-news-item img{
+	width: 100%;
+	float: left;
+}
+
+.owl-carousel .saglik-analizleri-news-item .news-content{
+	margin-left: 0px;
+}
+
 .owl-carousel .news-item .news-content .title{
 	margin-bottom: 5px;
 	font-size: 1.2em;
@@ -1395,4 +1407,18 @@ blockquote p {
     color: #5c5c5c;
     background-color: #f1f1f1;
     border-right: 3px solid #0f3d6e;
+}
+
+/************ Gallery ****************/
+.img-thumbnail {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border-color: #e8e8e8;
+  margin-bottom: 15px;
 }

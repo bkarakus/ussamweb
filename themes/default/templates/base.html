@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
-{% load pages_tags mezzanine_tags i18n staticfiles %}
+{% load pages_tags mezzanine_tags i18n staticfiles flatpages_tags %}
 
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="{% static "lib/owlcarousel/assets/owl.theme.default.min.css" %}">
 <link rel="stylesheet" href="{% static "lib/font-awesome/css/font-awesome.min.css" %}">
 <link rel="stylesheet" href="{% static "responsiveslides/responsiveslides.css" %}">
+<link rel="stylesheet" href="{% static "plugins/pretty-photo/css/prettyPhoto.css" %}">
 <!-- <link rel="stylesheet" href="{% static "css/mezzanine.css" %}"> -->
 <link rel="stylesheet" href="{% static "css/styles.css" %}">
 <link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
@@ -42,6 +43,7 @@
 <script src="{% static "js/bootstrap.js" %}"></script>
 <script src="{% static "lib/swiper/dist/js/swiper.min.js" %}"></script>
 <script src="{% static "lib/owlcarousel/owl.carousel.min.js" %}"></script>
+<script src="{% static "plugins/pretty-photo/js/jquery.prettyPhoto.js" %}"></script>
 <script src="{% static "js/default.js" %}"></script>
 <script src="{% static "responsiveslides/responsiveslides.js" %}"></script>
 {% block extra_js %}{% endblock %}
@@ -151,9 +153,13 @@
 			</div>
 		
 			<div class="col-md-3 right">
+				{% block sidebar %}
+					{% render_category saglik-analizleri 200 130 includes/homepage_saglik_analizleri.html %}
+				{% endblock %}
 			    {% nevercache %}
 			    {#% include "includes/user_panel.html" %#}
 			    {% endnevercache %}
+			    <!-- 
 			    <div class="panel panel-default">
 				    <div class="panel-body">
 				    {% block right_panel %}
@@ -163,6 +169,7 @@
 				    {% endblock %}
 				    </div>
 			    </div>
+			     -->
 			    {#% include "includes/keywords.html" %#}
 			</div>
 		</div>

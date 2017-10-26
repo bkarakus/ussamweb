@@ -15,6 +15,7 @@ from mezzanine.utils.models import AdminThumbMixin, upload_to, get_user_model_na
 from mezzanine.pages.models import Page
 
 from .meta import LocalizeModelBase, Translate
+from slides.models import Slide
 
 user_model_name = get_user_model_name()
 
@@ -32,6 +33,8 @@ class FlatPage(Displayable, RichText, AdminThumbMixin):
         format="Image", max_length=255, null=True, blank=True)
 
     admin_thumb_field = "featured_image"
+    
+    images = GenericRelation(Slide)
 
     class Meta:
         verbose_name = _(u"Düz Sayfa")

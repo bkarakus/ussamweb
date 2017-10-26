@@ -10,13 +10,27 @@
 				src="{{ MEDIA_URL }}{% thumbnail slide.image 850 300 %}"
 				class="img-responsive" />
 			</a>
+			<div class="caption">{{ slide.description }}</div>
 		</div>
 		{% endfor %}
 	</div>
-	<!-- Add Pagination -->
+	<!-- Add Pagination --> 
 	<div class="swiper-pagination"></div>
 	<!-- Add Arrows -->
 	<div class="swiper-button-next"></div>
 	<div class="swiper-button-prev"></div>
 </div>
+<script type="text/javascript">
+var swiper = new Swiper('.swiper-container', {
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'progressbar',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+
 {% endif %}

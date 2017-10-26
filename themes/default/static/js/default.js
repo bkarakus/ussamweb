@@ -1,11 +1,4 @@
 $(document).ready(function() {
-	var swiper = new Swiper('.swiper-container', {
-	    pagination: '.swiper-pagination',
-	    paginationClickable: true,
-	    preventClicks: false,
-	    nextButton: '.swiper-button-next',
-	    prevButton: '.swiper-button-prev',
-	}); 
     /* ======= Twitter Bootstrap hover dropdown ======= */
     
     /* Nested Sub-Menus mobile fix */
@@ -20,6 +13,8 @@ $(document).ready(function() {
 		}
     });
     
+    $('a.prettyphoto').prettyPhoto();
+    /*
     $('#raporlar-owlcarousel').owlCarousel({
         loop: false,
         margin: 10,
@@ -160,26 +155,26 @@ $(document).ready(function() {
         }
     });
     
-    var makaleSwiper = new Swiper('#makaleler-swiper', {
-        slidesPerView: 5,
-        spaceBetween: 1,
-        simulateTouch: false,
-        direction: 'vertical',
-        nextButton: '#section-makaleler .owl-next',
-        prevButton: '#section-makaleler .owl-prev',
-        autoplay: 7000,
-        speed: 750
+    $('#saglik-analizleri-owlcarousel').owlCarousel({
+        loop: false,
+        margin: 10,
+        nav: true,
+        dots: false,
+        navContainer: '#saglik-analizleri .owl-nav',
+        navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 1
+            },
+            1000: {
+                items: 1
+            }
+        }
     });
     
-    var makaleSwiper = new Swiper('#makaleler-raporlar', {
-        slidesPerView: 5,
-        spaceBetween: 1,
-        simulateTouch: false,
-        direction: 'vertical',
-        nextButton: '#section-raporlar .owl-next',
-        prevButton: '#section-raporlar .owl-prev',
-        autoplay: 7000,
-        speed: 750
-    });
-
+    
+*/
 });

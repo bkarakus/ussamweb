@@ -1,3 +1,4 @@
+# encoding: utf-8
 try:
     from urllib import unquote
 except ImportError:  # assume python3
@@ -24,6 +25,7 @@ class Slide(Orderable, SiteRelated, LanguageRelated, AdminThumbMixin):
     image = FileField(_('Image'), max_length=200, upload_to='slides', format='Image')
     description = models.CharField(_('Description'), blank=True, max_length=200)
     caption = models.CharField(_('Caption'), blank=True, max_length=200)
+    show_on_homepage = models.BooleanField(_(u'Anasayfada göster'), default=False)
     
     status = models.IntegerField(_("Status"),
         choices=CONTENT_STATUS_CHOICES, default=CONTENT_STATUS_PUBLISHED,
@@ -46,8 +48,8 @@ class Slide(Orderable, SiteRelated, LanguageRelated, AdminThumbMixin):
     objects = DisplayableManager()
     
     class Meta:
-        verbose_name = _('Slide')
-        verbose_name_plural = _('Slides')
+        verbose_name = _('Resim')
+        verbose_name_plural = _('Resimler')
         ordering = ("-publish_date","_order")
 
     def __unicode__(self):
