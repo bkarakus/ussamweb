@@ -1,0 +1,47 @@
+{% load i18n mezzanine_tags slides_tags %} 
+<!-- Begin Recent Work + Clients -->
+<div class="{{ css_classes }}">
+<section class="owl-section border-top owl-theme" id="section-{{ category.slug }}">
+	<div class="heading">
+		<h4><span class=""></span>{{ category.baslik }}</h4>
+		<div class="owl-controls">
+			<div class="owl-nav">
+				<div id="{{ category.slug }}-prev" class="owl-prev">
+					<i class="fa fa-chevron-down"></i>
+				</div>
+				<div id="{{ category.slug }}-next" class="owl-next">
+					<i class="fa fa-chevron-up"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="{{ category.slug }}-swiper" class="swiper-container swiper-container-vertical">
+		{% for flatpage in flatpages_list %}
+		<div class="swiper-slide aNew swiper-slide-prev"
+			style="height: 31.2px; margin-bottom: 1px;">
+			<a href="{{ flatpage.get_absolute_url }}"
+				title="{{ flatpage.title }}">
+			{{ flatpage.title }}	
+			</a>
+		</div>
+		{% endfor %}
+	</div>
+</section><!-- /section -->
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	var Swiper_{{ category.pk }} = new Swiper('#{{ category.slug }}-swiper', {
+	    slidesPerView: 5,
+	    spaceBetween: 1,
+	    simulateTouch: false,
+	    direction: 'vertical',
+	    autoplay: 7000,
+	    speed: 750,
+	    navigation: {
+	        nextEl: '#{{ category.slug }}-next',
+	        prevEl: '#{{ category.slug }}-prev',
+	      },
+	});
+});
+</script>

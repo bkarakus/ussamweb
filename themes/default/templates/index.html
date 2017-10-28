@@ -1,5 +1,5 @@
 {% extends "base.html" %} 
-{% load i18n mezzanine_tags slides_tags flatpages_tags %} 
+{% load i18n mezzanine_tags slides_tags flatpages_tags portlets_tags %} 
 {% block meta_title %}{% trans "Home" %}{% endblock %} 
 {% block title %}{% trans "Home" %}{% endblock%} 
 {% block breadcrumb_menu %}
@@ -10,29 +10,6 @@
 {% block main %}
 <!-- Swiper -->
 <div class="row">
-	<div class="col-md-12">
-		{% include "includes/homepage_slides_swiper.html" %}
-	</div>
-	<div class="col-md-12">
-		{% render_category haberler 200 130 includes/homepage_news_2.html %}
-	</div>
-	<div class="col-md-6" style="height:270px;">
-		{% render_category raporlar 200 130 includes/homepage_swiper.html %}
-	</div>
-	<div class="col-md-6" style="height:270px;">
-		{% render_category makaleler 200 280 includes/homepage_swiper.html %}
-	</div>
-	<div class="col-md-6" style="height:270px;">
-		{% render_category inceleme-gezileri 200 130 includes/homepage_swiper.html %}
-	</div>
-	<div class="col-md-6" style="height:270px;">
-		{% render_category kongreler 200 155 includes/homepage_owl.html %}
-	</div>
-	<div class="col-md-6">
-		{% render_category egitimler 200 130 includes/homepage_owl.html %}
-	</div>
-	<div class="col-md-6">
-		{% render_category medya 200 130 includes/homepage_owl.html %}
-	</div>
+	{% portlet_slot 'ana-sayfa' %}
 </div>
 {% endblock %}

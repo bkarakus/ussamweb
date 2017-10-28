@@ -266,13 +266,13 @@ INSTALLED_APPS = (
     "mezzanine.forms",
     "mezzanine.galleries",
     "mezzanine.twitter",
-    #"polymorphic",
+    "polymorphic",
     "flatpages",
     "slides",
     "pageimages",
     #"rosetta",
     "mezzanine.accounts",
-    #"portlets",
+    "portlets",
     # "mezzanine.mobile",
 )
 
@@ -325,6 +325,7 @@ ADMIN_MENU_ORDER = (
        "generic.ThreadedComment", (_("Media Library"), "media-library"),)),
     (_("Site"), ("sites.Site", "redirects.Redirect", "conf.Setting")),
     (_("Users"), ("auth.User", "auth.Group",)),
+    (_("Portlets"), ("portlets.Port",)),
 )
 
 '''

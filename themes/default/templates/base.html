@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
-{% load pages_tags mezzanine_tags i18n staticfiles flatpages_tags %}
+{% load pages_tags mezzanine_tags i18n staticfiles flatpages_tags portlets_tags %}
 
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -17,14 +17,14 @@
 
 {% compress css %}
 <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
-<link rel="stylesheet" href="{% static "lib/swiper/dist/css/swiper.min.css" %}">
+<link rel="stylesheet" href="{% static "lib/swiper/dist/css/swiper.min.css" %}?v=1">
 <link rel="stylesheet" href="{% static "lib/owlcarousel/assets/owl.carousel.min.css" %}">
 <link rel="stylesheet" href="{% static "lib/owlcarousel/assets/owl.theme.default.min.css" %}">
 <link rel="stylesheet" href="{% static "lib/font-awesome/css/font-awesome.min.css" %}">
 <link rel="stylesheet" href="{% static "responsiveslides/responsiveslides.css" %}">
 <link rel="stylesheet" href="{% static "plugins/pretty-photo/css/prettyPhoto.css" %}">
 <!-- <link rel="stylesheet" href="{% static "css/mezzanine.css" %}"> -->
-<link rel="stylesheet" href="{% static "css/styles.css" %}">
+<link rel="stylesheet" href="{% static "css/styles.css" %}?v=1">
 <link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
 {% if LANGUAGE_BIDI %}
 <link rel="stylesheet" href="{% static "css/bootstrap-rtl.css" %}">
@@ -41,10 +41,10 @@
 {% compress js %}
 <script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
 <script src="{% static "js/bootstrap.js" %}"></script>
-<script src="{% static "lib/swiper/dist/js/swiper.min.js" %}"></script>
+<script src="{% static "lib/swiper/dist/js/swiper.min.js" %}?v=1"></script>
 <script src="{% static "lib/owlcarousel/owl.carousel.min.js" %}"></script>
 <script src="{% static "plugins/pretty-photo/js/jquery.prettyPhoto.js" %}"></script>
-<script src="{% static "js/default.js" %}"></script>
+<script src="{% static "js/default.js" %}?v=1"></script>
 <script src="{% static "responsiveslides/responsiveslides.js" %}"></script>
 {% block extra_js %}{% endblock %}
 {% endcompress %}
@@ -154,7 +154,7 @@
 		
 			<div class="col-md-3 right">
 				{% block sidebar %}
-					{% render_category saglik-analizleri 200 130 includes/homepage_saglik_analizleri.html %}
+					{% portlet_slot 'sag' %}
 				{% endblock %}
 			    {% nevercache %}
 			    {#% include "includes/user_panel.html" %#}

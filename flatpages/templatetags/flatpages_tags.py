@@ -38,6 +38,14 @@ def get_category(context, slug):
         category = None
     return category
 
+@register.assignment_tag(takes_context=True)
+def get_categories(context, slot):
+    try:
+        categories= FlatPageCategory.objects.filter(slot=slot)
+    except:
+        categories = None
+    return categories
+
 @register.render_tag
 def render_category(context, token):
     slug, width, height, template_name = token.split_contents()[1:]

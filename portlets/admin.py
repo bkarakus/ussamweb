@@ -13,8 +13,8 @@ from polymorphic.admin import PolymorphicParentModelAdmin, PolymorphicChildModel
 
 
 # Register your models here.
-from portlets.models import (Portlet,
-                             TextPortlet)
+from portlets.models import (Portlet, TextPortlet,
+                             CategoryPortlet, SlideShowPortlet)
 
 class PortletChildAdmin(PolymorphicChildModelAdmin):
     base_model = Portlet
@@ -23,7 +23,10 @@ class PortletChildAdmin(PolymorphicChildModelAdmin):
     # The fields of the derived model should still be displayed.
     base_fieldsets = (
         ("Base fields", {
-            'fields': ('title', 'slot', 'order',)
+            'fields': ('title', 'slot', 'order','css_classes', 'header_css_classes', 'body_css_classes')
+        }),
+        ("Publish Info", {
+            'fields': ('status', 'publish_date', 'expiry_date',)
         }),
     )
     
@@ -34,9 +37,34 @@ class TextPorletAdmin(PortletChildAdmin):
     def has_module_permission(self, request):
         return False
     
+    def get_subclass_fields(self, request, obj=None):
+        return ('content',)
+    
+@admin.register(CategoryPortlet)
+class CategoryPorletAdmin(PortletChildAdmin):
+    base_model = CategoryPortlet
+    
+    def get_subclass_fields(self, request, obj=None):
+        return ('category', 'count', 'template', 'width', 'height')
+    
+    def has_module_permission(self, request):
+        return False
+    
+@admin.register(SlideShowPortlet)
+class SlideShowPorletAdmin(PortletChildAdmin):
+    base_model = SlideShowPortlet
+    
+    def get_subclass_fields(self, request, obj=None):
+        return ('template', 'count', 'width', 'height')
+    
+    def has_module_permission(self, request):
+        return False
+    
 @admin.register(Portlet)
 class ModelAParentAdmin(PolymorphicParentModelAdmin):
     """ The parent model admin """
     base_model = Portlet
-    child_models = (TextPortlet, )
-    list_filter = (PolymorphicChildModelFilter,)  # This is optional.
+    child_models = (TextPortlet, CategoryPortlet, SlideShowPortlet)
+    list_filter = (PolymorphicChildModelFilter,'slot')  # This is optional.
+    list_display = ('title', 'slot', 'order',)
+    list_editable = ('order',)

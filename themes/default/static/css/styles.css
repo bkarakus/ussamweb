@@ -1356,6 +1356,18 @@ blockquote p {
 	margin-left: 215px;
 }
 
+.owl-section .list-item {
+	margin-bottom: 10px;
+}
+
+.owl-section .list-item img{
+	width: 100%;
+}
+
+.owl-section .list-item .news-content h2{
+	font-size: 1.3em;
+}
+
 .owl-carousel .saglik-analizleri-news-item img{
 	width: 100%;
 	float: left;
