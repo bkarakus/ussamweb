@@ -15,6 +15,6 @@ def portlet_slot(context, slot):
         try:
             rendered_portlets.append(portlet.render(context))
         except Exception, e:
-            print e
+            pass
 
     return { "portlets" : rendered_portlets }
