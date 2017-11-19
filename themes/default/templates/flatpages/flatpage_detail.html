@@ -38,13 +38,13 @@
 		{% endeditable %}
 		
 		{% with flatpage.images.all as images and flatpage.featured_image as featured_image %}
+		{% if images.count > 1 %}
 		{% for image in images %}
-		{% if image.image != featured_image %}
 		<a class="prettyphoto col-md-4 col-sm-4 col-xs-6" rel="prettyPhoto[gallery]" title="{{ image.description }}" href="{{ MEDIA_URL }}{% thumbnail image.image 800 0 %}">
 			<img class="img-responsive img-thumbnail" src="{{ MEDIA_URL }}{% thumbnail image.image 300 200 %}" alt="{{ image.description }}">
 		</a> 
+		{% endfor%}
 		{% endif %}
-		{% endfor%} 
 		{% endwith %}
 	</article><!--//news-item-->
 </div>

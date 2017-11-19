@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="{% static "responsiveslides/responsiveslides.css" %}">
 <link rel="stylesheet" href="{% static "plugins/pretty-photo/css/prettyPhoto.css" %}">
 <!-- <link rel="stylesheet" href="{% static "css/mezzanine.css" %}"> -->
-<link rel="stylesheet" href="{% static "css/styles.css" %}?v=1">
+<link rel="stylesheet" href="{% static "css/styles.css" %}?v={% now 'Ymd' %}">
 <link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
 {% if LANGUAGE_BIDI %}
 <link rel="stylesheet" href="{% static "css/bootstrap-rtl.css" %}">
