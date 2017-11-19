@@ -1,0 +1,36 @@
+{% load i18n mezzanine_tags slides_tags static %} 
+<!-- Begin Recent Work + Clients -->
+<div class="{{ css_classes }}">
+	<section class="owl-section border-top owl-theme" id="section-{{ category.slug }}">
+		<div class="heading">
+			<h4><span class=""></span>{{ category.baslik }}</h4>
+			<div class="owl-controls">
+				<div class="owl-nav">
+					<div id="{{ category.slug }}-prev" class="owl-prev">
+						<a href="#carousel-{{ category.slug }}" role="button" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+					</div>
+					<div id="{{ category.slug }}-next" class="owl-next">
+						<a href="#carousel-{{ category.slug }}" role="button" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="carousel-{{ category.slug }}" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner" role="listbox">
+			{% for flatpage in flatpages_list %}
+				{% if forloop.counter0|divisibleby:"2" %}<div class="item {% if forloop.first %}active{% endif %}">{% endif %}
+					{% if flatpage.featured_image %}
+					<img class="thumb" src="{% get_media_prefix %}{% thumbnail flatpage.featured_image width height %}"  alt="" />
+			        {% endif %}
+			        <div class="news-content">
+						<h2 class="title"><a href="{{ flatpage.get_absolute_url }}">{{ flatpage.title }}</a></h2>
+				        {{ flatpage.description_from_content|safe|truncatewords_html:30 }}
+				        <a class="btn btn-theme read-more" href="{{ flatpage.get_absolute_url }}">{% trans "read more" %}<i class="fa fa-chevron-right"></i></a>
+			        </div>
+	        	{% if forloop.counter|divisibleby:"2" or forloop.last %}</div>{% endif %}
+	        {% endfor %}
+	        </div>
+		</div>
+	</section><!-- /section -->
+	<!-- End Recent Work + Clients -->
+</div>

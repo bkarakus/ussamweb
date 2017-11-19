@@ -89,11 +89,13 @@ class CategoryPortlet(Portlet):
     DEFAULT_TEMPLATE = 'portlets/category.html'
     NEWS_TEMPLATE = 'portlets/category_news.html'
     VERTICAL_TEMPLATE = 'portlets/category_vertical.html'
+    SIDEBAR_TEMPLATE = 'portlets/category_sidebar.html'
     
     TEMPLATES = (
         (DEFAULT_TEMPLATE, u'Ön Tanımlı'),
         (NEWS_TEMPLATE, u'Haberler'),
         (VERTICAL_TEMPLATE, u'Yukarı Doğru Kayan'),
+        (SIDEBAR_TEMPLATE, u'Sidebar'),
     )
     
     category = models.ForeignKey("flatpages.FlatPageCAtegory")
