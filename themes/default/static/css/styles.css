@@ -329,6 +329,7 @@ blockquote p {
 }
 .main-nav .nav .nav-item a {
   color: #dce7f0;
+  padding: 10px 5px;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
