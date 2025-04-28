@@ -64,6 +64,9 @@ class Portlet(PolymorphicModel, Displayable):
         """
         return True
 
+    def get_absolute_url(self):
+        return ""
+
 
     def render(self):
         return None
